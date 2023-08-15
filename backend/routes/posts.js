@@ -26,7 +26,7 @@ router.post("/login", (req, res, next) => {
     req.login(user, { session: false }, (err) => {
       if (err) return next(err);
 
-      const token = jwt.sign({ id: user._id }, "your-secret-key");
+      const token = jwt.sign({ id: user._id }, "meow-your-secret-key-meow");
       return res.json({ token });
     });
   })(req, res, next);
