@@ -37,7 +37,7 @@ router.get(
   "/protected",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    res.json({ message: "Protected route accessed successfully" });
+    res.json({ message: "Protected route authenticated successfully" });
   }
 );
 
