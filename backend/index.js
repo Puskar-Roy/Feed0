@@ -45,7 +45,7 @@ passport.use(
   new JwtStrategy(
     {
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-      secretOrKey: "your-secret-key",
+      secretOrKey: "meow-your-secret-key-meow",
     },
     (jwtPayload, done) => {
       User.findById(jwtPayload.id, (err, user) => {
