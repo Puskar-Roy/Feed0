@@ -32,7 +32,7 @@ router.post("/login", (req, res, next) => {
   })(req, res, next);
 });
 
-// Protected route (requires JWT authentication)
+// Protected route
 router.get(
   "/protected",
   passport.authenticate("jwt", { session: false }),
