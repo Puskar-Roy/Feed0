@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const passport = require("passport");
 const { Strategy: LocalStrategy } = require("passport-local");
 const { Strategy: JwtStrategy, ExtractJwt } = require("passport-jwt");
-const User = require("./models/User"); // Import the User model
+const User = require("./models/User");
 
 const app = express();
 const port = process.env.PORT || 5000;
