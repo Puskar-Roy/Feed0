@@ -62,5 +62,5 @@ app.use("/api/posts", require("./routes/posts"));
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Meow server is running on port ${port}`);
 });
