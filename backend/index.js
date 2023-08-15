@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // Connect to MongoDB
-mongoose.connect("your-mongodb-uri", {
+mongoose.connect("meow-your-mongodb-uri-meow", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
