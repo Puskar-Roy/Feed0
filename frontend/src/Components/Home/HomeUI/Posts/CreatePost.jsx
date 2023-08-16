@@ -25,8 +25,8 @@ function CreatePost() {
         </div>
         <div className="flex-1 px-2">
           <textarea
-            className="bg-transparent text-gray-700 font-medium text-lg w-full outline-none resize-none"
-            rows="2"
+            className="bg-transparent text-gray-700 font-medium text-lg w-full outline-none resize-none placeholder-gray-400"
+            rows="3"
             placeholder="What's happening?"
           ></textarea>
         </div>
