@@ -9,11 +9,11 @@ function CreatePost() {
           <img className="h-10 w-10 rounded-full" src="/Doraemon.png" alt="" />
         </div>
         <div className="flex-1 px-2">
-          <input
-            className="bg-gray-200 text-gray-700 font-medium text-lg w-full outline outline-blue-400 resize-none placeholder-white"
+          <textarea
+            className="bg-gray-200 rounded-xl text-gray-700 font-medium text-lg w-full outline outline-blue-400 resize-none placeholder-gray-600"
             rows="3"
-            placeholder="What's happening?"
-          ></input>
+            placeholder="Just Feed0 It."
+          ></textarea>
         </div>
       </div>
 
