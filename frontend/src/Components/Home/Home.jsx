@@ -1,5 +1,6 @@
 import React from "react";
 import Posts from "./HomeUI/Posts/Posts";
+import SideNav from "./HomeUI/SideNav";
 function Home() {
   return (
     <div className="my-[8rem]">
@@ -10,7 +11,7 @@ function Home() {
       </div>
       <div className="flex">
         <div className="w-1/4 p-4">
-          <h1>sidenav</h1>
+          <SideNav />
         </div>
 
         {/* Main Content */}
