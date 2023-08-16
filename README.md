@@ -2,7 +2,7 @@
 <p align="center">Version- v1.1 <br>Date- 15th August,2023 <br>Next Update- Soon (Forums UI, Comments, Likes, Share, User Profile ) <br>
 <a href="https://feed0.netlify.app">Live Demo</a></p>
 
-<h3 align="center"> <h4 align="center">Developers of Feed0</h4>  <br>
+<h3 align="center">Developers of Feed0 <br>
 <a href="https://github.com/ImKKingshuk">ImKKingshuk</a> &
 <a href="https://github.com/Puskar-Roy">Puskar</a></h3>
 
