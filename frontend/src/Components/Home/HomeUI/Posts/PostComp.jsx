@@ -1,5 +1,6 @@
 import React from "react";
-import { FaThumbsUp, FaComment, FaShare } from "react-icons/fa";
+import { FaThumbsUp, FaThumbsDown, FaComment, FaShare } from "react-icons/fa";
+import { FaEllipsisVertical } from "react-icons/fa6";
 
 function PostComp({ posts }) {
   return (
@@ -24,12 +25,19 @@ function PostComp({ posts }) {
               <FaThumbsUp className="text-blue-600" />
               <span>{post.likes}</span>
             </div>
-            <div className="flex items-center space-x-2 ml-4">
+            <div className="flex items-center space-x-2">
+              <FaThumbsDown className="text-gray-600" />
+              <span>{post.dislikes}</span>
+            </div>
+            <div className="flex items-center space-x-2 ">
               <FaComment className="text-gray-600" />
               <span>{post.comments.length}</span>
             </div>
-            <div className="flex items-center space-x-2 ml-auto">
+            <div className="flex items-center space-x-2 ">
               <FaShare className="text-gray-600" />
+            </div>
+            <div className="flex items-center space-x-2 ">
+              <FaEllipsisVertical className="text-gray-600" />
             </div>
           </div>
         </div>
