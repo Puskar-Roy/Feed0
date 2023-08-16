@@ -1,13 +1,28 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Profile from "./components/Profile";
+import Channels from "./components/Channels";
+import Message from "./components/Message";
 
 function App() {
   return (
-    <div className="text-black  text-center mx-auto">
-      <h1 className="text-[3rem] font-bold font-mono ">Feed0</h1>
-      <p className="text-md">
-        Next Gen Forums for School / College / University
-      </p>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/profile">
+          <Profile />
+        </Route>
+        <Route path="/channels">
+          <Channels />
+        </Route>
+        <Route path="/message">
+          <Message />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
