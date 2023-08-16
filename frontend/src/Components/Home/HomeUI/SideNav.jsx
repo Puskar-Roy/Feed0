@@ -7,6 +7,7 @@ import {
   FaCompass,
   FaUser,
   FaEllipsisH,
+  FaSignOutAlt,
 } from "react-icons/fa";
 
 function SideNav() {
@@ -59,8 +60,8 @@ function SideNav() {
         href="#"
         className="  flex items-center px-2 py-2       rounded-full  hover:bg-blue-300   text-black"
       >
-        <FaEllipsisH className="mr-4 h-6 w-6" />
-        More
+        <FaSignOutAlt className="mr-4 h-6 w-6" />
+        Logout
       </a>
     </nav>
   );
