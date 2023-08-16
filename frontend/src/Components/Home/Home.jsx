@@ -1,6 +1,7 @@
 import React from "react";
 import Posts from "./HomeUI/Posts/Posts";
 import SideNav from "./HomeUI/SideNav";
+import CreatePost from "./HomeUI/Posts/CreatePost";
 function Home() {
   return (
     <div className="my-[8rem]">
@@ -15,7 +16,8 @@ function Home() {
         </div>
 
         {/* Main Content */}
-        <div className="w-1/2 p-4">
+        <div className="w-1/2 p-4 space-y-10">
+          <CreatePost />
           <Posts />
         </div>
 
