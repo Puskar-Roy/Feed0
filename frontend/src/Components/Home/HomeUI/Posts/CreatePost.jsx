@@ -6,11 +6,7 @@ function CreatePost() {
     <div className="w-full bg-white shadow-lg rounded-xl p-4">
       <div className="flex">
         <div className="w-12 py-1">
-          <img
-            className="h-10 w-10 rounded-full"
-            src="https://pbs.twimg.com/profile_images/1121328878142853120/e-rpjoJi_bigger.png"
-            alt=""
-          />
+          <img className="h-10 w-10 rounded-full" src="/Doraemon.png" alt="" />
         </div>
         <div className="flex-1 px-2">
           <input
