@@ -12,7 +12,7 @@ import {
 
 function SideNav() {
   return (
-    <nav className=" px-2 text-center text-white text-base font-semibold space-y-2">
+    <div className=" rounded-xl shadow-xl px-2 text-center text-white text-base font-semibold space-y-2">
       <a
         href="#"
         className=" flex items-center px-2 py-2      rounded-full bg-blue-800 "
@@ -63,7 +63,7 @@ function SideNav() {
         <FaSignOutAlt className="mr-4 h-6 w-6" />
         Logout
       </a>
-    </nav>
+    </div>
   );
 }
 
