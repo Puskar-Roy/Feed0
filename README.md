@@ -4,7 +4,7 @@ Follow these steps to run Feed0
 
 ### Installation
 
-Install dependencies for both the backend and frontend :
+Install dependencies for both the frontend & backend:
 
 npm run install:all
 
