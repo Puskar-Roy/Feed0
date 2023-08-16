@@ -10,7 +10,7 @@ function CreatePost() {
         </div>
         <div className="flex-1 px-2">
           <input
-            className="bg-transparent text-gray-700 font-medium text-lg w-full outline-none resize-none placeholder-gray-400"
+            className="bg-gray-200 text-gray-700 font-medium text-lg w-full outline outline-blue-400 resize-none placeholder-white"
             rows="3"
             placeholder="What's happening?"
           ></input>
