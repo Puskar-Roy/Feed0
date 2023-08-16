@@ -5,7 +5,7 @@ function PostComp({ posts }) {
   return (
     <div>
       {posts.map((post) => (
-        <div key={post.id} className="bg-white p-4 shadow-md rounded-md mb-4">
+        <div key={post.id} className="bg-white p-4 shadow-lg rounded-lg mb-4">
           <div className="flex items-center">
             <img
               src={post.user.profilePicture}
@@ -18,7 +18,8 @@ function PostComp({ posts }) {
             </div>
           </div>
           <p className="mt-3">{post.content}</p>
-          <div className="flex mt-4">
+
+          <div className="flex mt-4 justify-between">
             <div className="flex items-center space-x-2">
               <FaThumbsUp className="text-blue-600" />
               <span>{post.likes}</span>
@@ -29,7 +30,6 @@ function PostComp({ posts }) {
             </div>
             <div className="flex items-center space-x-2 ml-auto">
               <FaShare className="text-gray-600" />
-              <span>Share</span>
             </div>
           </div>
         </div>
