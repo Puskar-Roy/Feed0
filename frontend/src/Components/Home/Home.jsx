@@ -9,13 +9,13 @@ function Home() {
         <p className="text-md">Forums for School / College / University</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 mx-auto">
-        <div>
+        <div className="w-1/5 bg-red">
           <h1>sidenav</h1>
         </div>
-        <div className="mx-auto">
+        <div className="mx-auto w-3/5">
           <Posts />
         </div>
-        <div>
+        <div className="w-1/5 bg-green">
           <h1>sidenav</h1>
         </div>
       </div>
