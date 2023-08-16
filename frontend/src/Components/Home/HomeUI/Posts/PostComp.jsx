@@ -6,7 +6,7 @@ function PostComp({ posts }) {
   return (
     <div>
       {posts.map((post) => (
-        <div key={post.id} className="bg-white p-4 shadow-lg rounded-lg mb-4">
+        <div key={post.id} className="bg-white p-4 shadow-lg rounded-2xl mb-4">
           <div className="flex items-center">
             <img
               src={post.user.profilePicture}
