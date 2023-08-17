@@ -2,28 +2,34 @@ import React, { useState } from "react";
 import { FaVideo, FaImage, FaPollH, FaSmile } from "react-icons/fa";
 
 function CreatePost() {
-  const [incognitoMode, setIncognitoMode] = useState(false);
+  const [activeTab, setActiveTab] = useState("normal");
 
-  const toggleIncognitoMode = () => {
-    setIncognitoMode(!incognitoMode);
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
   };
 
   return (
     <div
-      className={`w-full ${
-        incognitoMode ? "bg-purple-500" : "bg-white"
-      } shadow-lg rounded-xl p-4`}
+      className={`w-full bg-white shadow-lg rounded-xl p-4 ${
+        activeTab === "incognito" ? "bg-purple-500" : ""
+      }`}
     >
-      <div className="mx-auto flex items-center justify-between">
-        <div className="flex items-center space-x-4">
-          <button
-            className={`rounded-md p-2 ${
-              incognitoMode ? "bg-purple-600" : "bg-gray-300"
-            }`}
-            onClick={toggleIncognitoMode}
+      <div className="mx-auto flex items-center justify-between mb-4">
+        <div className="mx-auto space-x-4">
+          <TabButton
+            activeTab={activeTab}
+            tab="normal"
+            onClick={handleTabChange}
           >
-            {incognitoMode ? "Incognito On" : "Incognito Off"}
-          </button>
+            Normal
+          </TabButton>
+          <TabButton
+            activeTab={activeTab}
+            tab="incognito"
+            onClick={handleTabChange}
+          >
+            Incognito
+          </TabButton>
         </div>
       </div>
       <div className="flex">
@@ -59,6 +65,21 @@ function CreatePost() {
         </button>
       </div>
     </div>
+  );
+}
+
+function TabButton({ activeTab, tab, children, onClick }) {
+  return (
+    <button
+      className={`p-2 outline outline-gray-300 mx-auto ${
+        activeTab === tab
+          ? "bg-blue-600 text-white"
+          : "bg-gray-300 text-gray-700"
+      } rounded-md`}
+      onClick={() => onClick(tab)}
+    >
+      {children}
+    </button>
   );
 }
 
