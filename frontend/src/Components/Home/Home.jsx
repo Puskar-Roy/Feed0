@@ -4,24 +4,26 @@ import SideNav from "./HomeUI/SideNav";
 import CreatePost from "./HomeUI/Posts/CreatePost";
 import Navbar from "./HomeUI/NavBar";
 import StoryComp from "./HomeUI/Story/StoryComp";
+
 function Home() {
   return (
-    <div className="mx-auto">
+    <div className="mx-auto h-screen flex-col">
       <Navbar />
-      <div className="my-[4rem]">
+      <div className="my-[4rem] ">
         <div className="flex">
-          <div className="w-1/4 p-4">
+          {/* Left Content */}
+          <div className="w-1/4 p-4 overflow-y-auto">
             <SideNav />
           </div>
 
           {/* Main Content */}
-          <div className="w-1/2 p-4 space-y-10">
+          <div className="w-1/2 p-4 space-y-10 overflow-y-auto">
             <StoryComp />
             <CreatePost />
             <Posts />
           </div>
-
-          <div className="w-1/4 p-4">
+          {/* Right Content */}
+          <div className="w-1/4 p-4   overflow-y-auto">
             <h1>sidenav</h1>
           </div>
         </div>
