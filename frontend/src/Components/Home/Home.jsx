@@ -7,7 +7,7 @@ import StoryComp from "./HomeUI/Story/StoryComp";
 
 function Home() {
   return (
-    <div className="mx-auto h-screen flex-col">
+    <div className="mx-auto h-screen">
       <Navbar />
       <div className="my-[4rem] ">
         <div className="flex">
