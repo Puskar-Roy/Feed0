@@ -10,9 +10,9 @@ function CreatePost() {
 
   return (
     <div
-      className={`w-full bg-white shadow-lg rounded-xl p-4 ${
-        activeTab === "incognito" ? "bg-purple-500" : ""
-      }`}
+      className={`w-full ${
+        activeTab === "incognito" ? "bg-purple-300" : "bg-white"
+      } shadow-lg rounded-xl p-4 `}
     >
       <div className="mx-auto flex items-center justify-between mb-4">
         <div className="mx-auto space-x-4">
@@ -38,7 +38,9 @@ function CreatePost() {
         </div>
         <div className="flex-1 px-2">
           <textarea
-            className="bg-gray-200 rounded-xl text-gray-700 font-medium text-lg w-full outline outline-blue-400 resize-none placeholder-gray-600"
+            className={`bg-gray-200 rounded-xl text-gray-700 font-medium text-lg w-full outline outline-blue-400 resize-none placeholder-gray-600 ${
+              activeTab === "incognito" ? "bg-gray-300" : ""
+            }`}
             rows="3"
             placeholder="Just Feed0 It."
           ></textarea>
@@ -75,7 +77,7 @@ function TabButton({ activeTab, tab, children, onClick }) {
         activeTab === tab
           ? "bg-blue-600 text-white"
           : "bg-gray-300 text-gray-700"
-      } rounded-md`}
+      } rounded-xl`}
       onClick={() => onClick(tab)}
     >
       {children}
