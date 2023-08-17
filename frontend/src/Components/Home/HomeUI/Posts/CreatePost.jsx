@@ -53,20 +53,44 @@ function CreatePost() {
 
       <div className="flex items-center justify-between mt-3">
         <div className="flex space-x-5">
-          <a href="#" className="items-center text-gray-400 hover:text-sky-400">
+          <a
+            href="#"
+            className={`items-center ${
+              activeTab === "incognito" ? "text-white" : "text-gray-400"
+            } hover:text-sky-400`}
+          >
             <FaImage className="h-6 w-6" />
           </a>
-          <a href="#" className="items-center text-gray-400 hover:text-sky-400">
+          <a
+            href="#"
+            className={`items-center ${
+              activeTab === "incognito" ? "text-white" : "text-gray-400"
+            } hover:text-sky-400`}
+          >
             <FaVideo className="h-6 w-6" />
           </a>
-          <a href="#" className="items-center text-gray-400 hover:text-sky-400">
+          <a
+            href="#"
+            className={`items-center ${
+              activeTab === "incognito" ? "text-white" : "text-gray-400"
+            } hover:text-sky-400`}
+          >
             <FaPollH className="h-6 w-6" />
           </a>
-          <a href="#" className="items-center text-gray-400 hover:text-sky-400">
+          <a
+            href="#"
+            className={`items-center ${
+              activeTab === "incognito" ? "text-white" : "text-gray-400"
+            } hover:text-sky-400`}
+          >
             <FaSmile className="h-6 w-6" />
           </a>
         </div>
-        <button className="bg-blue-400 text-white font-bold py-2 px-5 rounded-full hover:bg-blue-600">
+        <button
+          className={` text-white font-bold py-2 px-5  ${
+            activeTab === "incognito" ? "bg-purple-600" : "bg-blue-500"
+          }  rounded-full hover:bg-blue-600 `}
+        >
           Feed
         </button>
       </div>
