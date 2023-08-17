@@ -40,8 +40,14 @@ npm run start:backend
 ### Getting Started
 
 1. **Fork the Repository:** Start by forking the repository to your GitHub account.
+2. **Clone your Fork::** Clone the forked repository to your local machine using the following command:
 
-1. **Install dependencies:** Install dependencies for both the frontend & backend:
+```bash
+git clone https://github.com/ImKKingshuk/Feed0.git
+
+```
+
+3. **Install dependencies:** Install dependencies for both the frontend & backend:
 
 ```bash
 npm run install:all
