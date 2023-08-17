@@ -3,6 +3,7 @@ import Posts from "./HomeUI/Posts/Posts";
 import SideNav from "./HomeUI/SideNav";
 import CreatePost from "./HomeUI/Posts/CreatePost";
 import Navbar from "./HomeUI/NavBar";
+import StoryComp from "./HomeUI/Story/StoryComp";
 function Home() {
   return (
     <div className="mx-auto">
@@ -15,6 +16,7 @@ function Home() {
 
           {/* Main Content */}
           <div className="w-1/2 p-4 space-y-10">
+            <StoryComp />
             <CreatePost />
             <Posts />
           </div>
