@@ -72,7 +72,6 @@ git merge upstream/main
 ```bash
 git commit -m "Add feature: your-feature-name"
 
-
 ```
 
 6. **Stay Updated To Avoid Conflicts::** While working on your feature, it's a good practice to frequently pull the latest changes from the upstream repository to avoid conflicts:
@@ -81,9 +80,8 @@ git commit -m "Add feature: your-feature-name"
 ```bash
 git push origin yourbranch/your-feature-name
 
-
 ```
 
 8. **Create a Pull Request:** Open a pull request from your fork to the main repository. Provide a detailed description of your changes, why they are needed, and any relevant information.
 
-<h4 align="center">Thank You, We appreciate your contributions</h4>
+<h4 align="center">😊 Thank You, We appreciate your contributions 😊</h4>
