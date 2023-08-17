@@ -6,7 +6,7 @@
 
 <br><br>
 
-<h4 align="center">Follow these steps to run Feed0</h4>
+<h3 align="center">Follow these steps to run Feed0</h3>
 
 #### Installation
 
@@ -33,3 +33,6 @@ npm run start:frontend
 ```bash
 npm run start:backend
 ```
+
+<h3 align="center">Contributing</h3>
+<p align="center">We welcome contributions from the community to make Feed0 better for everyone. Whether you're a developer, designer, or enthusiast, there are ways you can contribute.</p>
