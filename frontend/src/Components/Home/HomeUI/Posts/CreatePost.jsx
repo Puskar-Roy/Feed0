@@ -42,7 +42,11 @@ function CreatePost() {
               activeTab === "incognito" ? "bg-gray-300" : ""
             }`}
             rows="3"
-            placeholder="Just Feed0 It."
+            placeholder={
+              activeTab === "incognito"
+                ? "You've gone incognito, Feed it."
+                : "Feed it."
+            }
           ></textarea>
         </div>
       </div>
