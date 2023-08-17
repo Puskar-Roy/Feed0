@@ -36,3 +36,30 @@ npm run start:backend
 
 <h3 align="center">Contributing</h3>
 <p align="center">We welcome contributions from the community to make Feed0 better for everyone. Whether you're a developer, designer, or enthusiast, there are ways you can contribute.</p>
+
+#### Getting Started
+
+1. **Fork the Repository:** Start by forking the repository to your GitHub account.
+
+2. **Always Sync Repo:** Before starting any work, sync your local repository with the upstream (original) repository to ensure you have the latest changes:
+
+```bash
+git fetch upstream
+git checkout main
+git merge upstream/main
+
+```
+
+3. **Code Changes:** Make the necessary code changes, improvements, or bug fixes in your branch.
+4. **Testing:** Ensure that your changes are thoroughly tested. Run tests if applicable and make sure existing tests pass.
+5. **Commit Changes:** Commit your changes with a clear and descriptive commit message:
+
+```bash
+git commit -m "Add feature: your-feature-name"
+
+
+```
+
+6. **Clone Your Fork:**
+7. **Clone Your Fork:**
+8. **Clone Your Fork:**
