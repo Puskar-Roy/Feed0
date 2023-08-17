@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaVideo, FaImage, FaPollH, FaSmile } from "react-icons/fa";
 
 function CreatePost() {
+  const [incognitoMode, setIncognitoMode] = useState(false);
+
+  const toggleIncognitoMode = () => {
+    setIncognitoMode(!incognitoMode);
+  };
+
   return (
-    <div className="w-full bg-white shadow-lg rounded-xl p-4">
+    <div
+      className={`w-full ${
+        incognitoMode ? "bg-purple-500" : "bg-white"
+      } shadow-lg rounded-xl p-4`}
+    >
+      <div className="mx-auto flex items-center justify-between">
+        <div className="flex items-center space-x-4">
+          <button
+            className={`rounded-md p-2 ${
+              incognitoMode ? "bg-purple-600" : "bg-gray-300"
+            }`}
+            onClick={toggleIncognitoMode}
+          >
+            {incognitoMode ? "Incognito On" : "Incognito Off"}
+          </button>
+        </div>
+      </div>
       <div className="flex">
         <div className="w-12 py-1">
           <img className="h-10 w-10 rounded-full" src="/Doraemon.png" alt="" />
