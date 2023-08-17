@@ -75,6 +75,12 @@ git commit -m "Add feature: your-feature-name"
 ```
 
 6. **Stay Updated To Avoid Conflicts::** While working on your feature, it's a good practice to frequently pull the latest changes from the upstream repository to avoid conflicts:
+
+```bash
+git pull upstream main
+
+```
+
 7. **Push your changes to your forked repository on GitHub::**
 
 ```bash
