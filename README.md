@@ -90,4 +90,4 @@ git push origin yourbranch/your-feature-name
 
 8. **Create a Pull Request:** Open a pull request from your fork to the main repository. Provide a detailed description of your changes, why they are needed, and any relevant information.
 
-<h4 align="center">😊 Thank You, We appreciate your contributions 😊</h4>
+<h3 align="center">😊 Thank You, We appreciate your contributions 😊</h3>
