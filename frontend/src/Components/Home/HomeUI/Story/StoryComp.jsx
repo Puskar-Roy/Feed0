@@ -12,15 +12,16 @@ const people = [
     online: true,
   },
   {
-    name: "Anna",
+    name: "Hulk",
     imgSrc: "https://randomuser.me/api/portraits/women/60.jpg",
     online: true,
   },
   {
-    name: "Anna",
+    name: "IronMan",
     imgSrc: "https://randomuser.me/api/portraits/women/60.jpg",
     online: true,
   },
+
   {
     name: "Anna",
     imgSrc: "https://randomuser.me/api/portraits/women/60.jpg",
