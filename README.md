@@ -12,32 +12,24 @@
 
 Install dependencies for both the frontend & backend:
 
+```bash
 npm run install:all
+```
 
 ##### Start the backend and frontend servers concurrently :
 
+```bash
 npm start
+```
 
 ##### Only Start the frontend:
 
+```bash
 npm run start:frontend
-
-# Backend
-
-The backend infrastructure of this web application is built using a powerful combination of TypeScript, Express.js, Node.js, and MongoDB.
-
-## Backend Installation
-
-Use the package manager [npm](https://www.npmjs.com/) to install dependencies.
-```bash
-cd backend
-```
-```bash
-npm install 
 ```
 
-## Run Server
-To run the server, you must execute "index.ts"
-```python
-npm run dev
+##### Only Start the backend:
+
+```bash
+npm run start:backend
 ```
