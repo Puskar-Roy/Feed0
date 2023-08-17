@@ -1,4 +1,5 @@
 import React from "react";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 const servers = [
   { id: 1, name: "Feed0 Official", members: 123, imageUrl: "/Doraemon.png" },
@@ -32,7 +33,9 @@ function ServerCard({ server }) {
         <div className="font-medium">{server.name}</div>
         <div className="text-gray-400 text-sm">{server.members} Members</div>
       </div>
-      <span className="text-lg">&#x1F511;</span>
+      <span className="text-lg">
+        <BsThreeDotsVertical />
+      </span>
     </div>
   );
 }
