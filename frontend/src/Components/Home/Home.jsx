@@ -12,7 +12,7 @@ function Home() {
       <div className="my-[4rem] ">
         <div className="flex">
           {/* Left Content */}
-          <div className="w-1/4 p-4 overflow-y-auto">
+          <div className="w-1/4 p-4 overflow-y-auto h-screen">
             <SideNav />
           </div>
 
@@ -23,7 +23,7 @@ function Home() {
             <Posts />
           </div>
           {/* Right Content */}
-          <div className="w-1/4 p-4   overflow-y-auto">
+          <div className="w-1/4 p-4   overflow-y-auto h-screen">
             <h1>sidenav</h1>
           </div>
         </div>
