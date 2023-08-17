@@ -34,7 +34,7 @@ npm run start:frontend
 npm run start:backend
 ```
 
-<h2 align="center">Contributing</h2>
+<h1 align="center">Contributing</h1>
 <p align="center">We welcome contributions from the community to make Feed0 better for everyone. Whether you're a developer, designer, or enthusiast, there are ways you can contribute.</p>
 
 ### Getting Started
