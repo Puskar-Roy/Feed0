@@ -1,7 +1,6 @@
 import mongoose, { Document, Model, Schema } from "mongoose";
 import bcryptjs from "bcryptjs";
 
-
 interface IUser extends Document {
   name: string;
   department: string;
@@ -11,8 +10,9 @@ interface IUser extends Document {
   password: string;
   cpassword: string;
   phone: number;
+  imagePublicId: String;
+  imageUrl: String;
 }
-
 
 const userSchema: Schema<IUser> = new mongoose.Schema({
   name: {
@@ -49,8 +49,9 @@ const userSchema: Schema<IUser> = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  imagePublicId: { type: String },
+  imageUrl: { type: String },
 });
-
 
 userSchema.pre<IUser>("save", async function (next) {
   if (this.isModified("password")) {
