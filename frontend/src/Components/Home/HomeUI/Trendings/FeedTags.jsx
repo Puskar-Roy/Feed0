@@ -27,7 +27,7 @@ function FeedTag({ index, tag, feeds }) {
 
 function FeedTags() {
   const feedTags = [
-    { name: "HI-Fashion", category: "Politics", feeds: 8464 },
+    { name: "React", category: "TechStack", feeds: 8464 },
     // ... Add more feed tags
   ];
 
