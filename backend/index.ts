@@ -1,11 +1,11 @@
 import express from "express";
 import dotenv from "dotenv";
+dotenv.config();
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import router from './routes/routes'
-import cookieParse from 'cookie-parser'
-dotenv.config();
-import './database/connectDatabase'; // Imports the module without using its exports
+import router from './routes/routes';
+import cookieParse from 'cookie-parser';
+import './database/connectDatabase'; 
 
 
 const app = express();
