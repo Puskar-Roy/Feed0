@@ -32,7 +32,7 @@ function FeedTags() {
   ];
 
   return (
-    <div>
+    <div className="overflow-y-auto mx-auto outline outline-gray-400 w-full h-full">
       {feedTags.map((tag, index) => (
         <FeedTag key={index} index={index} tag={tag} feeds={tag.feeds} />
       ))}
