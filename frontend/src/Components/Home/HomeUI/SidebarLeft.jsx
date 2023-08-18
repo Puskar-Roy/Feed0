@@ -11,7 +11,7 @@ const servers = [
 function SidebarLeft() {
   return (
     <div className=" w-full h-screen  text-white">
-      <div className="text-2xl mb-4">Servers</div>
+      <div className="text-2xl py-6 text-black">Feeds</div>
       <div className="space-y-4">
         {servers.map((server) => (
           <ServerCard key={server.id} server={server} />
