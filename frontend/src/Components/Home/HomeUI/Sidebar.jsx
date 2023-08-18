@@ -8,7 +8,7 @@ const servers = [
   // ... add more servers
 ];
 
-function Sidebar() {
+function SidebarLeft() {
   return (
     <div className=" w-full h-screen  text-white">
       <div className="text-2xl mb-4">Servers</div>
@@ -40,4 +40,4 @@ function ServerCard({ server }) {
   );
 }
 
-export default Sidebar;
+export default SidebarLeft;
