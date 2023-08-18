@@ -10,15 +10,13 @@ function SearchBar() {
     const searchTerm = event.target.value;
     setSearchTerm(searchTerm);
 
-    // Perform search and get searchResults
     const searchResults = await performSearch(searchTerm);
 
-    // Navigate to the search results page
     history.push("/searchresults", { searchResults });
   };
 
   const performSearch = async (searchTerm) => {
-    // Simulate different types of search results
+    //  different types of search results
     // Replace with actual API calls
     const userProfiles = await fetchUserProfiles(searchTerm);
     const serversGroups = await fetchServersGroups(searchTerm);
@@ -34,25 +32,25 @@ function SearchBar() {
   };
 
   const fetchUserProfiles = async (searchTerm) => {
-    // Simulate fetching user profiles
+    //  fetching user profiles
     // Replace with actual API call
     return [];
   };
 
   const fetchServersGroups = async (searchTerm) => {
-    // Simulate fetching servers/groups
+    //  fetching servers/groups
     // Replace with actual API call
     return [];
   };
 
   const fetchPosts = async (searchTerm) => {
-    // Simulate fetching posts
+    //  fetching posts
     // Replace with actual API call
     return [];
   };
 
   const fetchFeedTags = async (searchTerm) => {
-    // Simulate fetching feed tags
+    //  fetching feed tags
     // Replace with actual API call
     return [];
   };
