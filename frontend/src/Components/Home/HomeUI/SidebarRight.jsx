@@ -1,10 +1,13 @@
 import React from "react";
 import SearchBar from "./Search/SearchBar";
-
+import TrendingUsers from "./Trendings/TrendingUsers";
+import FeedTags from "./Trendings/FeedTags";
 function SidebarRight() {
   return (
-    <div>
-      <h1>SidebarRight</h1>
+    <div className="mx-auto  space-y-8">
+      <SearchBar />
+      <FeedTags />
+      <TrendingUsers />
     </div>
   );
 }
