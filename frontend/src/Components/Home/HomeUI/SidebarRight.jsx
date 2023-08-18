@@ -1,4 +1,5 @@
 import React from "react";
+import SearchBar from "./Search/SearchBar";
 
 function SidebarRight() {
   return (
