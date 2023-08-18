@@ -52,7 +52,7 @@ const people = [
 
 function StoryComp() {
   return (
-    <div className=" flex  p-4 overflow-x-auto ">
+    <div className=" flex  p-4 overflow-x-auto no-scrollbar">
       {people.map((person, index) => (
         <div key={index} className="text-sm text-center mr-4">
           <div

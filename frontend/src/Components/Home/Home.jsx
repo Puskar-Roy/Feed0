@@ -8,7 +8,7 @@ import SidebarRight from "./HomeUI/SidebarRight";
 
 function Home() {
   return (
-    <div className="mx-auto h-screen w-screen">
+    <div className="mx-auto h-screen w-screen no-scrollbar">
       <Navbar />
       <div className="my-[4rem] flex">
         {/* Left Content */}
@@ -21,7 +21,7 @@ function Home() {
         </div>
 
         {/* Main Content */}
-        <div className="w-1/2 p-4 space-y-10 overflow-y-auto h-screen">
+        <div className="w-1/2 p-4 space-y-10 overflow-y-auto h-screen no-scrollbar">
           <StoryComp />
           <CreatePost />
           <Posts />
