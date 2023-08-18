@@ -9,7 +9,6 @@
     "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install"
   },
   "devDependencies": {
-    "@types/multer": "^1.4.7",
     "concurrently": "^8.2.0"
   }
 }
