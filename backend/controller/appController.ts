@@ -117,20 +117,43 @@ const registerController = async (req: Request, res: Response) => {
   }
 };
 
-const getAllUser = (req: Request, res: Response) => {
-  res.status(200).json("Working");
+const getAllUser = async (req: Request, res: Response) => {
+  try {
+    const users = await User.find().exec();
+    res.json(users);
+  } catch (error) {
+    res.status(200).json(error);
+  }
 };
 
-const getUser = (req: Request, res: Response) => {
-  res.status(200).json("Working");
+const getUser = async (req: Request, res: Response) => {
+  const id = req.params.id;
+  try {
+    const user = await User.findById({ _id: id });
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(400).json(error);
+  }
 };
 
-const updateUser = (req: Request, res: Response) => {
-  res.status(200).json("Working");
+const updateUser = async (req: Request, res: Response) => {
+  const id = req.params.id;
+  try {
+    const update = await User.findByIdAndUpdate({ _id: id }, req.body);
+    res.status(200).json(update);
+  } catch (error) {
+    res.status(400).json(error);
+  }
 };
 
-const deleteUser = (req: Request, res: Response) => {
-  res.status(200).json("Working");
+const deleteUser = async (req: Request, res: Response) => {
+  const id = req.params.id;
+  try {
+    await User.findOneAndDelete({ _id: id });
+    res.status(200).json("Delete");
+  } catch (error) {
+    res.status(400).json(error);
+  }
 };
 
 const getAllPost = (req: Request, res: Response) => {
