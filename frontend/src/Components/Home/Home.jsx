@@ -4,6 +4,7 @@ import SidebarLeft from "./HomeUI/SidebarLeft";
 import CreatePost from "./HomeUI/Posts/CreatePost";
 import Navbar from "./HomeUI/NavBar";
 import StoryComp from "./HomeUI/Story/StoryComp";
+import SidebarRight from "./HomeUI/SidebarRight";
 
 function Home() {
   return (
@@ -26,8 +27,10 @@ function Home() {
           <Posts />
         </div>
         {/* Right Content */}
-        <div className="w-1/4 p-4   overflow-y-auto h-screen">
-          <h1>sidenav</h1>
+        <div className="w-1/4 p-4  h-screen">
+          <div className="overflow-y-auto h-full">
+            <SidebarRight />
+          </div>
         </div>
       </div>
     </div>
