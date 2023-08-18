@@ -21,8 +21,8 @@ function SuggestedPerson({ name, username, followers }) {
           <div>
             <img
               className="inline-block h-10 w-auto rounded-full ml-4 mt-2"
-              src="https://pbs.twimg.com/profile_images/1121328878142853120/e-rpjoJi_bigger.png"
-              alt=""
+              src="/Doaremon.png"
+              alt={name}
             />
           </div>
           <div className="ml-3 mt-3">
