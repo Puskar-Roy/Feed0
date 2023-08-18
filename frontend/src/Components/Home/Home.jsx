@@ -13,7 +13,7 @@ function Home() {
       <div className="my-[4rem] flex">
         {/* Left Content */}
         <div className="w-1/4 p-4  h-screen">
-          <div className="overflow-y-auto h-full no-scrollbar">
+          <div className="overflow-y-auto h-full ">
             <SidebarLeft />
           </div>
         </div>

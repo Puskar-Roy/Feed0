@@ -25,7 +25,7 @@ function ServerCard({ server }) {
   return (
     <div className="flex items-center bg-gray-700 rounded-xl p-2 cursor-pointer hover:bg-gray-600">
       <img
-        className="w-10 h-10 rounded-full object-cover mr-2"
+        className="w-10 h-10 rounded-lg object-cover mr-2"
         src={server.imageUrl}
         alt={`Server ${server.name}`}
       />
