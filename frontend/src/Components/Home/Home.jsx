@@ -1,6 +1,6 @@
 import React from "react";
 import Posts from "./HomeUI/Posts/Posts";
-import Sidebar from "./HomeUI/Sidebar";
+import SidebarLeft from "./HomeUI/SidebarLeft";
 import CreatePost from "./HomeUI/Posts/CreatePost";
 import Navbar from "./HomeUI/NavBar";
 import StoryComp from "./HomeUI/Story/StoryComp";
@@ -15,7 +15,7 @@ function Home() {
           <h1 className="text-center text-[2.5rem] pt-4">Feeds</h1>
 
           <div className="overflow-y-auto h-full">
-            <Sidebar />
+            <SidebarLeft />
           </div>
         </div>
 
