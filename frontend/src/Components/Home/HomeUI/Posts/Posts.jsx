@@ -1,118 +1,25 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import PostComp from "./PostComp";
-const dummyPosts = [
-  {
-    id: 1,
-    user: {
-      name: "Feed0 Official",
-      profilePicture: "profile-pic-url",
-      timestamp: "2 hours ago",
-    },
-    content: " feed0 updated to v1.1",
-    likes: 10,
-    dislikes: 4,
-    comments: [
-      { id: 1, text: "Great post!", user: "IronMan" },
-      { id: 2, text: "I agree!", user: "Hulk" },
-    ],
-  },
-  {
-    id: 1,
-    user: {
-      name: "Feed0 Official",
-      profilePicture: "profile-pic-url",
-      timestamp: "2 hours ago",
-    },
-    content: " feed0 updated to v1.1",
-    likes: 10,
-    dislikes: 4,
-    comments: [
-      { id: 1, text: "Great post!", user: "IronMan" },
-      { id: 2, text: "I agree!", user: "Hulk" },
-    ],
-  },
-  {
-    id: 1,
-    user: {
-      name: "Feed0 Official",
-      profilePicture: "profile-pic-url",
-      timestamp: "2 hours ago",
-    },
-    content: " feed0 updated to v1.1",
-    likes: 10,
-    dislikes: 4,
-    comments: [
-      { id: 1, text: "Great post!", user: "IronMan" },
-      { id: 2, text: "I agree!", user: "Hulk" },
-    ],
-  },
-  {
-    id: 1,
-    user: {
-      name: "Feed0 Official",
-      profilePicture: "profile-pic-url",
-      timestamp: "2 hours ago",
-    },
-    content: " feed0 updated to v1.1",
-    likes: 10,
-    dislikes: 4,
-    comments: [
-      { id: 1, text: "Great post!", user: "IronMan" },
-      { id: 2, text: "I agree!", user: "Hulk" },
-    ],
-  },
-  {
-    id: 1,
-    user: {
-      name: "Feed0 Official",
-      profilePicture: "profile-pic-url",
-      timestamp: "2 hours ago",
-    },
-    content: " feed0 updated to v1.1",
-    likes: 10,
-    dislikes: 4,
-    comments: [
-      { id: 1, text: "Great post!", user: "IronMan" },
-      { id: 2, text: "I agree!", user: "Hulk" },
-    ],
-  },
-  {
-    id: 1,
-    user: {
-      name: "Feed0 Official",
-      profilePicture: "profile-pic-url",
-      timestamp: "2 hours ago",
-    },
-    content: " feed0 updated to v1.1",
-    likes: 10,
-    dislikes: 4,
-    comments: [
-      { id: 1, text: "Great post!", user: "IronMan" },
-      { id: 2, text: "I agree!", user: "Hulk" },
-    ],
-  },
-  {
-    id: 1,
-    user: {
-      name: "Feed0 Official",
-      profilePicture: "profile-pic-url",
-      timestamp: "2 hours ago",
-    },
-    content: " feed0 updated to v1.1",
-    likes: 10,
-    dislikes: 4,
-    comments: [
-      { id: 1, text: "Great post!", user: "IronMan" },
-      { id: 2, text: "I agree!", user: "Hulk" },
-    ],
-  },
-  // Add more posts...
-];
-
+import axios from "axios";
 function Posts() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/posts`, {
+        withCredentials: true,
+      })
+      .then((response) => {
+        console.log(response.data);
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <div>
-      <PostComp posts={dummyPosts} />
+      <PostComp posts={data} />
     </div>
   );
 }

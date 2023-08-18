@@ -29,7 +29,7 @@ function NavBar() {
   const rightNavLinks = [
     { to: "/profile", icon: <FaUser /> },
     { to: "/settings", icon: <GrSettingsOption /> },
-    { to: "/logout", icon: <FaSignOutAlt /> },
+    { to: "/login", icon: <FaSignOutAlt /> },
   ];
 
   return (
