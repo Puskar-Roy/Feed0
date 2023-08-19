@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { Toaster, toast } from "react-hot-toast";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -43,16 +45,13 @@ const Login = () => {
     <div>
       <Toaster />
       <div className="bg-[#F9FAFB] h-screen w-screen flex items-center">
-        <div className="h-max mx-auto flex flex-col items-center">
-          <img
-            className="h-[40px] w-[47px] mb-5"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-            alt=""
-          />
-          <h1 className="text-xl font-bold text-center pb-10">
-            Sign in to your account
-          </h1>
-          <div className="bg-white shadow-xl p-10 flex flex-col gap-4 text-sm">
+        <div className="h-fit mx-auto flex flex-col items-center">
+          <img className="w-32 mb-5" src="/Doraemon.png" alt="" />
+
+          <div className="bg-white shadow-2xl rounded-2xl p-8 flex flex-col gap-4 text-sm">
+            <h1 className="text-xl font-bold text-center pb-5">
+              Login to your account
+            </h1>
             <div>
               <label
                 className="text-gray-600 font-bold inline-block pb-2"
@@ -89,29 +88,52 @@ const Login = () => {
             <div>
               <input
                 onClick={registerUserSubmit}
-                className="bg-[#4F46E5] w-full py-2 rounded-md text-white font-bold cursor-pointer hover:bg-[#181196]"
+                className="bg-blue-300 w-full py-2 rounded-lg text-white font-bold cursor-pointer hover:bg-blue-500"
                 type="submit"
                 value="Login"
               />
             </div>
-            <div>
-              <p className="text-center">Or continue with</p>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <input
+                  id="remember_me"
+                  name="remember_me"
+                  type="checkbox"
+                  className="h-4 w-4 bg-blue-500 focus:ring-blue-400 border-gray-300 rounded"
+                />
+                <label
+                  for="remember_me"
+                  class="ml-2 block text-sm text-gray-900"
+                >
+                  Remember me
+                </label>
+              </div>
+              <p class="text-sm">
+                <a href="/forgot" class="text-indigo-400 hover:text-blue-500">
+                  Forgot password?
+                </a>
+              </p>
             </div>
-            <div className="flex gap-4">
-              <button className="bg-[#1D9BF0] w-1/2 py-1 rounded-md text-white font-bold cursor-pointer hover:bg-[#181196]">
-                Twitter
-              </button>
-              <button className="bg-[#24292F] w-1/2 py-1 rounded-md text-white font-bold cursor-pointer hover:bg-[#181196]">
-                Github
-              </button>
+            <div className="mt-4">
+              <p className="text-center pb-3">Or continue with</p>
+
+              <div className="flex gap-4">
+                <button className="bg-white flex items-center outline outline-gray-300 justify-center hover:text-white space-x-3 w-1/2 py-1 rounded-md text-black font-bold cursor-pointer hover:bg-blue-500">
+                  <FcGoogle /> <span>Google</span>
+                </button>
+                <button className="bg-[#24292F] flex items-center space-x-3 justify-center w-1/2 py-1 rounded-md text-white font-bold cursor-pointer hover:bg-blue-500">
+                  <FaGithub /> <span> Github</span>
+                </button>
+              </div>
             </div>
+
+            <p className="text-sm text-gray-500 mt-10 flex justify-between">
+              <span>Don't have an account ?</span>
+              <a href="/register" className="text-[#4F46E5] font-bold">
+                Register Here
+              </a>
+            </p>
           </div>
-          <p className="text-sm text-gray-500 mt-10">
-            Not a member?{" "}
-            <a href="/register" className="text-[#4F46E5] font-bold">
-              Register Here
-            </a>
-          </p>
         </div>
       </div>
     </div>
