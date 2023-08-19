@@ -45,14 +45,14 @@ const Login = () => {
     <div>
       <Toaster />
       <div className="bg-[#F9FAFB] h-screen w-screen flex items-center">
-        <div className="h-fit w-[26rem] mx-auto flex flex-col items-center">
+        <div className="h-fit w-fit mx-auto flex flex-col items-center">
           <img className="w-32 mb-5" src="/Doraemon.png" alt="" />
 
           <div className="bg-white shadow-2xl rounded-2xl p-8 flex flex-col gap-4 text-sm">
             <h1 className="text-xl font-bold text-center pb-5">
               Login to your account
             </h1>
-            <div className="">
+            <div className="w-[26rem]">
               <input
                 onChange={handleEmailChange}
                 value={email}
