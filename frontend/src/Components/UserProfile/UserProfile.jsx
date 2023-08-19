@@ -22,6 +22,10 @@ function UserProfile() {
                   />
                 </svg>{" "}
               </div>{" "}
+              <button className="text-white py-2 px-4  rounded-full bg-blue-400 hover:bg-blue-500 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
+                {" "}
+                Edit Profile
+              </button>{" "}
             </div>{" "}
             <div className="grid grid-cols-3 text-center order-last md:order-first mt-20 md:mt-0">
               {" "}
