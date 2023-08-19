@@ -15,7 +15,7 @@ function SuggestedPerson({ name, username, followers }) {
   const formattedFollowers = formatFollowersCount(followers);
 
   return (
-    <div className="flex flex-shrink-0 w-full rounded-lg outline outline-gray-400">
+    <div className="flex justify-between px-4 w-full rounded-lg outline outline-gray-400">
       <div className="flex-1">
         <div className="flex items-center ">
           <div>
@@ -27,21 +27,15 @@ function SuggestedPerson({ name, username, followers }) {
           </div>
           <div className="ml-3 mt-3">
             <p className="text-base leading-6 font-medium text-white">{name}</p>
-            <p className="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-              @{username}
-            </p>
-            <p className="text-xs leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-              {formattedFollowers} Followers
-            </p>
+            <p className="text-sm  ">@{username}</p>
+            <p className="text-xs  flex">{formattedFollowers} Followers</p>
           </div>
         </div>
       </div>
       <div className="flex-1 px-4 py-2 m-2">
-        <a href="">
-          <button className="bg-transparent hover:bg-blue-500  font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded-full">
-            <FaUserPlus className="h-4 w-4 " />
-          </button>
-        </a>
+        <button className="bg-transparent hover:bg-blue-500   font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded-full">
+          <FaUserPlus className="h-4 w-4 " />
+        </button>
       </div>
     </div>
   );
