@@ -183,21 +183,21 @@ const Register = () => {
                   <p>
                     By clicking Create an Account, you agree to our{" "}
                     <a
-                      className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                      className="font-medium text-blue-600 hover:underline dark:text-primary-500"
                       href="#"
                     >
                       Terms and Conditions
                     </a>{" "}
                     ,{" "}
                     <a
-                      className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                      className="font-medium text-blue-600 hover:underline dark:text-primary-500"
                       href="#"
                     >
                       Privacy Policy
                     </a>{" "}
                     and{" "}
                     <a
-                      className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                      className="font-medium text-blue-600 hover:underline dark:text-primary-500"
                       href="#"
                     >
                       Cookies Policy
@@ -207,7 +207,7 @@ const Register = () => {
               </div>
               <button
                 type="submit"
-                className={`w-full text-blue font-medium rounded-lg text-sm px-5 py-2.5 text-center ${
+                className={`w-full text-blue font-medium rounded-[16px] text-sm px-5 py-2.5 text-center ${
                   termsAccepted
                     ? "bg-blue-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300"
                     : "bg-blue-300 pointer-events-none"
@@ -216,13 +216,10 @@ const Register = () => {
               >
                 Create an account
               </button>
-              <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                Already have an account?{" "}
-                <a
-                  href="/login"
-                  className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                >
-                  Login here
+              <p className="text-sm text-gray-500 mt-10 flex space-x-6 justify-center">
+                <span>Already have an account</span>
+                <a href="/login" className="text-[#4F46E5] font-bold">
+                  Login
                 </a>
               </p>
             </form>
