@@ -1,70 +1,65 @@
+import React from "react";
+import { FaEdit, FaUserPlus, FaEnvelope } from "react-icons/fa";
+
 function UserProfile() {
   return (
-    <div>
-      <div className="p-16">
-        <div className="p-8 bg-white shadow mt-24">
-          <div className="grid grid-cols-1 ">
-            <div className="relative">
-              <div className="w-48 h-48 bg-indigo-100 mx-auto rounded-full shadow-2xl absolute inset-x-0 top-0 -mt-24 flex items-center justify-center text-indigo-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-24 w-24"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
-              <button className="text-white py-2 px-4  rounded-full bg-blue-400 hover:bg-blue-500 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
-                Edit Profile
-              </button>
-            </div>
-            <div className="grid grid-cols-3 text-center order-last md:order-first mt-20 md:mt-0">
-              <span>
-                <p className="font-bold text-gray-700 text-xl">22</p>
-                <p className="text-gray-400">Following</p>
-              </span>
-              <span>
-                <p className="font-bold text-gray-700 text-xl">10</p>
-                <p className="text-gray-400">Followers</p>
-              </span>
-              <span>
-                <p className="font-bold text-gray-700 text-xl">89</p>
-                <p className="text-gray-400">Posts</p>
-              </span>
-            </div>
-            <div className="space-x-8 flex justify-between mt-32 md:mt-0 md:justify-center">
-              <button className="text-white py-2 px-4 uppercase rounded bg-blue-400 hover:bg-blue-500 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
-                Follow
-              </button>
-              <button className="text-white py-2 px-4 uppercase rounded bg-gray-700 hover:bg-gray-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
-                Message
-              </button>
-            </div>
+    <div className="bg-gray-100 min-h-screen flex justify-center items-center">
+      <div className="max-w-md w-full bg-white p-6 rounded-lg shadow-lg">
+        <div className="flex items-center justify-between">
+          <div className="w-20 h-20 rounded-full bg-indigo-100 flex items-center justify-center">
+            {/* User Profile Image */}
+            {/* Replace with your image or icon */}
+            <FaUserPlus className="text-indigo-500 text-3xl" />
           </div>
-          <div className="mt-20 text-center border-b pb-12">
-            <h1 className="text-4xl font-medium text-gray-700">
-              Jessica Jones,
-            </h1>
-            <p className="font-light text-gray-600 mt-3">Bucharest, Romania</p>
-            <p className="mt-8 text-gray-500">
-              Solution Manager - Creative Tim Officer
-            </p>
-            <p className="mt-2 text-gray-500">University of Computer Science</p>
-            <p className="text-gray-600 text-center font-light lg:px-16">
-              An artist of considerable range, Ryan — the name taken by
-              Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs
-              and records all of his own music, giving it a warm, intimate feel
-              with a solid groove structure. An artist of considerable range.
-            </p>
+          <button className="text-blue-500 hover:underline">
+            <FaEdit /> Edit Profile
+          </button>
+        </div>
+
+        <div className="mt-4">
+          <h1 className="text-3xl font-semibold">Jessica Jones</h1>
+          <p className="text-gray-500 mt-1">Bucharest, Romania</p>
+        </div>
+
+        <div className="flex justify-between mt-4">
+          <div className="flex items-center space-x-2">
+            <p className="font-semibold">22</p>
+            <p className="text-gray-500">Following</p>
           </div>
-          <div>
-            {/*  users posts here, ebr ekhane user r posts thabkba.. */}
+          <div className="flex items-center space-x-2">
+            <p className="font-semibold">10</p>
+            <p className="text-gray-500">Followers</p>
           </div>
+          <div className="flex items-center space-x-2">
+            <p className="font-semibold">89</p>
+            <p className="text-gray-500">Posts</p>
+          </div>
+        </div>
+
+        <div className="flex justify-between mt-4">
+          <button className="bg-blue-500 text-white py-2 px-4 rounded-lg">
+            <FaUserPlus className="mr-2" />
+            Follow
+          </button>
+          <button className="bg-gray-300 text-gray-700 py-2 px-4 rounded-lg">
+            <FaEnvelope className="mr-2" />
+            Message
+          </button>
+        </div>
+
+        <div className="mt-6">
+          <h2 className="text-lg font-semibold">About Me</h2>
+          <p className="text-gray-600 mt-2">
+            An artist of considerable range, Ryan — the name taken by
+            Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and
+            records all of his own music, giving it a warm, intimate feel with a
+            solid groove structure. An artist of considerable range.
+          </p>
+        </div>
+
+        <div className="mt-6">
+          {/* User's Posts */}
+          {/* Render user's posts here */}
         </div>
       </div>
     </div>
