@@ -3,7 +3,7 @@ import { FaChevronDown } from "react-icons/fa";
 
 function FeedTag({ index, tag, feeds }) {
   return (
-    <div className="flex px-3 justify-between px-1 items-center w-full rounded-lg outline outline-gray-400">
+    <div className="flex px-2 justify-between px-1 items-center w-full rounded-lg outline outline-gray-400">
       <div className="">
         <p className=" ml-2 mt-3  flex  text-xs text-gray-400">
           {index + 1}. {tag.category} . Trending
