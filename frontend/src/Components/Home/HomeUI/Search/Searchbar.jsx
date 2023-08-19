@@ -56,18 +56,18 @@ function SearchBar() {
   };
 
   return (
-    <div className="flex items-center space-x-2 w-full">
-      <div className="relative">
+    <div className="w-full relative">
+      <div className="flex items-center">
         <input
           type="text"
           placeholder="Search"
           value={searchTerm}
           onChange={handleSearch}
-          className="py-2 px-4 pr-10 rounded-full border border-gray-300 focus:outline-none focus:border-blue-400 transition duration-300"
+          className="py-2 px-4 rounded-xl border border-gray-300 focus:outline-none focus:border-blue-400 transition duration-300 w-full"
         />
-        <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-          <FaSearch className="text-gray-500" />
-        </div>
+        <button className="absolute right-0 text-white rounded-lg bg-blue-300 hover:bg-blue-500 ">
+          <FaSearch className="m-3" />
+        </button>
       </div>
     </div>
   );

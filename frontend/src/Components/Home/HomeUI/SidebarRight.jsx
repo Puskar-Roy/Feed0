@@ -5,7 +5,6 @@ import FeedTags from "./Trendings/FeedTags";
 function SidebarRight() {
   return (
     <div className="mx-auto space-y-10 ">
-      <div></div>
       <SearchBar />
       <FeedTags />
       <TrendingUsers />
