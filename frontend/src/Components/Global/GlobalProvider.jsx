@@ -4,7 +4,7 @@ function GlobalProvider({ children }) {
   return (
     <div>
       <NavBar />
-      <div className="my-[4rem] mx-auto"></div>
+      <div className="my-[4rem] mx-auto">{children}</div>
     </div>
   );
 }
