@@ -15,7 +15,7 @@ function App() {
         {/* <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} /> */}
         <Route path="/profile" element={<UserProfile />} />
-        <Route path="/message" element={<Message />} />
+        <Route path="/messages" element={<Message />} />
         <Route path="/notifications" element={<NotificationsPage />} />
       </Routes>
     </BrowserRouter>
