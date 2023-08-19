@@ -7,11 +7,11 @@ function SidebarRight() {
     <div className="mx-auto space-y-10 ">
       <SearchBar />
       <div>
-        <h1 className="text-2xl py-6 text-black">FeedTags</h1>
+        <h1 className="text-2xl py-4 text-black">FeedTags</h1>
         <FeedTags />
       </div>
       <div>
-        <h1 className="text-2xl py-6 text-black">FeedTags</h1>
+        <h1 className="text-2xl py-4 text-black">Trending Profiles</h1>
         <TrendingUsers />
       </div>
     </div>
