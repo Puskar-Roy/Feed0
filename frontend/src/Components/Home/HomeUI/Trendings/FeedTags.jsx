@@ -5,10 +5,14 @@ function FeedTag({ index, tag, feeds }) {
   return (
     <div className="flex justify-between px-1 items-center w-full rounded-lg outline outline-gray-400">
       <div className="">
-        <p className="px-4 ml-2 mt-3   text-xs text-gray-400">
-          {index + 1}. {tag.category} . Trending
-        </p>
-        <h2 className="px-4 ml-2   font-bold text-white">#{tag.name}</h2>
+        <span className="">
+          {" "}
+          <p className="px-4 ml-2 mt-3   text-xs text-gray-400">
+            {index + 1}. {tag.category} . Trending
+          </p>
+          <h2 className="px-4 ml-2   font-bold">#{tag.name}</h2>
+        </span>
+
         <p className="px-4 ml-2 mb-3   text-xs text-gray-400">{feeds} Feeds</p>
       </div>
       <div className=" px-4 py-2 m-2">
