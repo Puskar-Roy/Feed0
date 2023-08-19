@@ -10,16 +10,17 @@ import GlobalProvider from "./Components/Global/GlobalProvider";
 function App() {
   return (
     <BrowserRouter>
-      <GlobalProvider></GlobalProvider>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/searchresults" element={<SearchResultsPage />} />
-        {/* <Route path="/login" element={<Login />} />
+      <GlobalProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/searchresults" element={<SearchResultsPage />} />
+          {/* <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} /> */}
-        <Route path="/profile" element={<UserProfile />} />
-        <Route path="/messages" element={<Message />} />
-        <Route path="/notifications" element={<NotificationsPage />} />
-      </Routes>
+          <Route path="/profile" element={<UserProfile />} />
+          <Route path="/messages" element={<Message />} />
+          <Route path="/notifications" element={<NotificationsPage />} />
+        </Routes>
+      </GlobalProvider>
     </BrowserRouter>
   );
 }
