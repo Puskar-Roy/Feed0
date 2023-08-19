@@ -1,69 +1,37 @@
-import React from "react";
-
-const people = [
-  {
-    name: "Your Story",
-    imgSrc: "/Doraemon.png",
-    online: false,
-  },
-  {
-    name: "Anna",
-    imgSrc: "https://randomuser.me/api/portraits/women/60.jpg",
-    online: true,
-  },
-  {
-    name: "Hulk",
-    imgSrc: "https://randomuser.me/api/portraits/women/60.jpg",
-    online: true,
-  },
-  {
-    name: "IronMan",
-    imgSrc: "https://randomuser.me/api/portraits/women/60.jpg",
-    online: true,
-  },
-
-  {
-    name: "Anna",
-    imgSrc: "https://randomuser.me/api/portraits/women/60.jpg",
-    online: true,
-  },
-  {
-    name: "Anna",
-    imgSrc: "https://randomuser.me/api/portraits/women/60.jpg",
-    online: true,
-  },
-  {
-    name: "Anna",
-    imgSrc: "https://randomuser.me/api/portraits/women/60.jpg",
-    online: true,
-  },
-  {
-    name: "Anna",
-    imgSrc: "https://randomuser.me/api/portraits/women/60.jpg",
-    online: true,
-  },
-  {
-    name: "Anna",
-    imgSrc: "https://randomuser.me/api/portraits/women/60.jpg",
-    online: true,
-  },
-  // ... add more people here
-];
+import { useState , useEffect } from "react";
+import axios from "axios";
 
 function StoryComp() {
+    const [dataa, setData] = useState([]);
+    useEffect(() => {
+      axios
+        .get(`http://localhost:8000/api/users`, {
+          withCredentials: true,
+        })
+        .then((response) => {
+          setData(response.data);
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }, []);
+
   return (
     <div className=" flex  p-4 overflow-x-auto no-scrollbar">
-      {people.map((person, index) => (
+      <div>
+      </div>
+      {dataa.map((person, index) => (
         <div key={index} className="text-sm text-center mr-4">
           <div
-            className={`p-1 border-4 ${
-              person.online ? "border-transparent" : "border-blue-600"
-            } rounded-full`}
+            // className={`p-1 border-4 ${
+            //   person.online ? "border-transparent" : "border-blue-600"
+            // } rounded-full`}
           >
             <div className="w-16 h-16 relative flex flex-shrink-0">
               <img
                 className="shadow-md rounded-full w-full h-full object-cover"
-                src={person.imgSrc}
+                src={person.imageUrl}
                 alt=""
               />
               {person.online && (
@@ -75,7 +43,7 @@ function StoryComp() {
           </div>
           <p>{person.name}</p>
         </div>
-      ))}
+      ))} 
     </div>
   );
 }

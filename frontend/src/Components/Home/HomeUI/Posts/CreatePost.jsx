@@ -1,12 +1,41 @@
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import { FaVideo, FaImage, FaPollH, FaSmile } from "react-icons/fa";
+import axios from "axios";
 
 function CreatePost() {
   const [activeTab, setActiveTab] = useState("normal");
+  const [dataa,setData] = useState();
+  const[post , Setpost] = useState('');
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/posts`, {
+        withCredentials: true,
+      })
+      .then((response) => {
+        setData(response.data.userData);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
+
+  const handelPost = async ()=>{
+    console.log(post);
+    const postData = axios.post(`http://localhost:8000/api/posts`,{author:dataa.name , content:post}, {
+      withCredentials: true,
+    });
+    if(postData){
+      window.alert("Post Done Reload")
+    }else{
+      window.alert("Not Done")
+    }
+
+  }
 
   return (
     <div
@@ -34,7 +63,13 @@ function CreatePost() {
       </div>
       <div className="flex">
         <div className="w-12 py-1">
-          <img className="h-10 w-10 rounded-full" src="/Doraemon.png" alt="" />
+          {dataa && dataa.imageUrl ? (
+            <img
+              className="h-10 w-10 rounded-full"
+              src={dataa.imageUrl}
+              alt="ddd"
+            />
+          ) : null}
         </div>
         <div className="flex-1 px-2">
           <textarea
@@ -42,6 +77,8 @@ function CreatePost() {
               activeTab === "incognito" ? "bg-gray-300" : ""
             }`}
             rows="3"
+            onChange={(e)=>{Setpost(e.target.value)}}
+            value={post}
             placeholder={
               activeTab === "incognito"
                 ? "You've gone incognito, Feed it."
@@ -87,6 +124,7 @@ function CreatePost() {
           </a>
         </div>
         <button
+        onClick={handelPost}
           className={` text-white font-bold py-2 px-5  ${
             activeTab === "incognito" ? "bg-purple-600" : "bg-blue-500"
           }  rounded-full hover:bg-blue-600 `}

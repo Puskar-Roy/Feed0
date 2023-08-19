@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
-  const history = useHistory();
+  // const history = useHistory();
 
   const handleSearch = async (event) => {
     const searchTerm = event.target.value;
