@@ -44,7 +44,7 @@ function TrendingUsers() {
   ];
 
   return (
-    <div className="overflow-y-auto space-y-4 w-full h-[18rem] mx-auto outline rounded-lg outline-gray-300  p-4 ">
+    <div className="overflow-y-auto space-y-4 w-full h-[18rem] mx-auto outline rounded-lg outline-gray-300  p-2 ">
       {suggestedPeople.map((person, index) => (
         <SuggestedPerson
           key={index}
