@@ -19,6 +19,11 @@ function UserProfile() {
         <div className="mt-4">
           <h1 className="text-3xl font-semibold">Jessica Jones</h1>
           <p className="text-gray-500 mt-1">Bucharest, Romania</p>
+
+          <p className="mt-4 text-gray-500">
+            Solution Manager - Creative Tim Officer
+          </p>
+          <p className="mt-1 text-gray-500">University of Computer Science</p>
         </div>
 
         <div className="flex justify-between mt-4">
@@ -44,6 +49,10 @@ function UserProfile() {
           <button className="bg-gray-300 text-gray-700 py-2 px-4 rounded-lg">
             <FaEnvelope className="mr-2" />
             Message
+          </button>
+          <button className="bg-gray-300 text-gray-700 py-2 px-4 rounded-lg">
+            <FaEnvelope className="mr-2" />
+            Incognito Messege
           </button>
         </div>
 
