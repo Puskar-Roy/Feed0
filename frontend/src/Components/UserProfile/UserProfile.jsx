@@ -32,10 +32,10 @@ function UserProfile() {
                 <p className="font-bold text-gray-700 text-xl">10</p>
                 <p className="text-gray-400">Followers</p>
               </span>
-              <div>
+              <span>
                 <p className="font-bold text-gray-700 text-xl">89</p>
                 <p className="text-gray-400">Posts</p>
-              </div>
+              </span>
             </div>
             <div className="space-x-8 flex justify-between mt-32 md:mt-0 md:justify-center">
               <button className="text-white py-2 px-4 uppercase rounded bg-blue-400 hover:bg-blue-500 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
