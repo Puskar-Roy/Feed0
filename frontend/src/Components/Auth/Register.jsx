@@ -186,12 +186,6 @@ const Register = () => {
                   />
                 </div>
                 <div className="ml-3 text-sm">
-                  <label
-                    htmlFor="terms"
-                    className="font-light text-gray-500 dark:text-gray-300"
-                  >
-                    I accept the
-                  </label>
                   <p>
                     By clicking Sign Up, you agree to our{" "}
                     <a
@@ -211,9 +205,8 @@ const Register = () => {
                       className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                       href="#"
                     >
-                      Privacy Policy
+                      Cookies Policy
                     </a>
-                    Cookies Policy.{" "}
                   </p>
                 </div>
               </div>
