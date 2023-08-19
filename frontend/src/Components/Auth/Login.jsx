@@ -67,10 +67,6 @@ const Login = () => {
               />
             </div>
             <div>
-              <label
-                className="text-gray-600 font-bold inline-block pb-2"
-                htmlFor="Password"
-              ></label>
               <input
                 onChange={handlePasswordChange}
                 value={password}
