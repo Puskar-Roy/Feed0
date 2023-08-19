@@ -4,6 +4,7 @@ import Login from "./Components/Auth/Login";
 import Register from "./Components/Auth/Register";
 import SearchResultsPage from "./Components/Home/HomeUI/Search/SearchResultsPage";
 import UserProfile from "./Components/UserProfile/UserProfile";
+import NotificationsPage from "./Components/Home/HomeUI/Notifications/NotificationsPage";
 function App() {
   return (
     <BrowserRouter>
@@ -13,6 +14,7 @@ function App() {
         {/* <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} /> */}
         <Route path="/profile" element={<UserProfile />} />
+        <Route path="/notifications" element={<NotificationsPage />} />
       </Routes>
     </BrowserRouter>
   );
