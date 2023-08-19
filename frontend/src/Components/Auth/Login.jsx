@@ -60,7 +60,7 @@ const Login = () => {
               <input
                 onChange={handleEmailChange}
                 value={email}
-                className="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-3 py-2"
+                className="border border-gray-400 focus:outline-blue-500 rounded-md w-full shadow-sm px-3 py-2"
                 type="email"
                 name="email"
                 placeholder=" Email / Phone Number / @UserName"
@@ -74,7 +74,7 @@ const Login = () => {
               <input
                 onChange={handlePasswordChange}
                 value={password}
-                className="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-3 py-2"
+                className="border border-gray-400 focus:outline-blue-500 rounded-md w-full shadow-sm px-3 py-2"
                 type="password"
                 name="password"
                 placeholder="Password"
