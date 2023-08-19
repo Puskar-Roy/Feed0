@@ -198,6 +198,10 @@ const Register = () => {
                       Terms and Conditions
                     </a>
                   </label>
+                  <p>
+                    By clicking Sign Up, you agree to our Terms, Privacy Policy
+                    and Cookies Policy.{" "}
+                  </p>
                 </div>
               </div>
               <button
