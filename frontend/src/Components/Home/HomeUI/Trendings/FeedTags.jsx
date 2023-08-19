@@ -27,7 +27,7 @@ function FeedTag({ index, tag, feeds }) {
 function FeedTags() {
   const feedTags = [
     { name: "ImKKingshuk", category: "Person", feeds: 8464 },
-    { name: "Puskar", category: "", feeds: 8464 },
+    { name: "Puskar", category: "TechStack", feeds: 8464 },
     { name: "React", category: "TechStack", feeds: 8464 },
     { name: "Vite", category: "TechStack", feeds: 8464 },
     // ... Add more feed tags
