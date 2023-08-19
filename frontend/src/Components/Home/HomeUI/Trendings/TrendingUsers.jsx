@@ -43,7 +43,7 @@ function TrendingUsers() {
     { name: "ImKKingshuk", username: "Feed0", followers: 1200000000 },
     { name: "Puskar", username: "Feed0", followers: 120000000 },
     { name: "UIT", username: "Feed0", followers: 100 },
-    { name: "", username: "Feed0", followers: 1200 },
+    { name: "Feed0 Official", username: "Feed0", followers: 1200 },
 
     // ... Add more suggested people
   ];
