@@ -15,7 +15,7 @@ function SuggestedPerson({ name, username, followers }) {
   const formattedFollowers = formatFollowersCount(followers);
 
   return (
-    <div className="flex flex-shrink-0 w-full">
+    <div className="flex flex-shrink-0 w-full outline hover:outline-gray-300 rounded-lg">
       <div className="flex-1">
         <div className="flex items-center ">
           <div>
@@ -54,7 +54,7 @@ function TrendingUsers() {
   ];
 
   return (
-    <div className="overflow-y-auto space-y-4 w-full h-[18rem] mx-auto outline outline-gray-400  ">
+    <div className="overflow-y-auto space-y-4 w-full h-[18rem] mx-auto outline outline-gray-400 px-4 ">
       {suggestedPeople.map((person, index) => (
         <SuggestedPerson
           key={index}
