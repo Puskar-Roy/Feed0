@@ -56,7 +56,6 @@ function UserProfile() {
             {" "}
             <h1 className="text-4xl font-medium text-gray-700">
               Jessica Jones,{" "}
-              <span className="font-light text-gray-500">27</span>
             </h1>{" "}
             <p className="font-light text-gray-600 mt-3">Bucharest, Romania</p>{" "}
             <p className="mt-8 text-gray-500">
