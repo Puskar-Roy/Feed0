@@ -7,6 +7,7 @@ import UserProfile from "./Components/UserProfile/UserProfile";
 import NotificationsPage from "./Components/Home/HomeUI/Notifications/NotificationsPage";
 import Message from "./Components/Message/Message";
 import GlobalProvider from "./Components/Global/GlobalProvider";
+import SettingsPage from "./Components/Home/HomeUI/AppSettings/SettingsPage";
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +19,7 @@ function App() {
         <Route path="/register" element={<Register />} /> */}
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/messages" element={<Message />} />
+          <Route path="/settings" element={<SettingsPage />} />
           <Route path="/notifications" element={<NotificationsPage />} />
         </Routes>
       </GlobalProvider>
