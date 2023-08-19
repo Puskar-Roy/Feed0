@@ -5,8 +5,7 @@ function FeedTag({ index, tag, feeds }) {
   return (
     <div className="flex justify-between px-1 items-center w-full rounded-lg outline outline-gray-400">
       <div className="">
-        <span className="">
-          {" "}
+   
           <p className="px-4 ml-2 mt-3   text-xs text-gray-400">
             {index + 1}. {tag.category} . Trending
           </p>
