@@ -126,6 +126,13 @@ const Login = () => {
                 </button>
               </div>
             </div>
+
+            <p className="text-sm text-gray-500 mt-10 flex justify-between">
+              <span>Don't have an account ?</span>
+              <a href="/register" className="text-[#4F46E5] font-bold">
+                Register Here
+              </a>
+            </p>
           </div>
         </div>
       </div>
