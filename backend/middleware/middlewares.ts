@@ -18,20 +18,17 @@ const verifyToken = async (
     const verify = jwt.verify(cookies, sec) as JwtPayload;
 
     if (verify) {
-      const idUser: string = verify.id; 
+      const idUser: string = verify.id;
       console.log(verify.id);
-      
 
-      const user = (await User.findOne({ _id:idUser })) as IUser;
+      const user = (await User.findOne({ _id: idUser })) as IUser;
 
       if (user) {
         req.userData = user;
       }
     }
   } catch (error) {
-
-
-    return res.status(404).json({error})
+    return res.status(404).json({ error });
   }
 
   next();

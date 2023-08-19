@@ -6,8 +6,6 @@ import Post from "../models/Posts";
 import jwt from "jsonwebtoken";
 import { IUserRequest } from "../middleware/middlewares";
 
-
-
 const loginController = async (req: Request, res: Response) => {
   const { email, password } = req.body;
   if (!email || !password) {

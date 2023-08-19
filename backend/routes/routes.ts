@@ -36,7 +36,7 @@ router.delete("/users/:id", deleteUser);
 //      2.Users End Point
 router.post("/posts", multerConfig.single("image"), createPost);
 router.post("/posts/:postId/:userId", likePost);
-router.get("/posts",verifyToken, getAllPost);
+router.get("/posts", verifyToken, getAllPost);
 router.get("/posts/:id", getPost);
 router.patch("/posts/:id", updatePost);
 router.delete("/posts/:id", deletePost);
