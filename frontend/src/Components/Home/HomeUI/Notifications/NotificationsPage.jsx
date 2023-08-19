@@ -20,7 +20,7 @@ const notifications = [
   // Add more notifications here
 ];
 
-const NotificationsPage = () => {
+function NotificationsPage() {
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
       <div className="bg-white rounded-lg p-6 shadow-md w-96">
@@ -41,6 +41,6 @@ const NotificationsPage = () => {
       </div>
     </div>
   );
-};
+}
 
 export default NotificationsPage;
