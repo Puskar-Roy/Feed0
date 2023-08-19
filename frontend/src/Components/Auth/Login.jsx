@@ -53,10 +53,6 @@ const Login = () => {
               Login to your account
             </h1>
             <div>
-              <label
-                className="text-gray-600 font-bold inline-block pb-2"
-                htmlFor="email"
-              ></label>
               <input
                 onChange={handleEmailChange}
                 value={email}
