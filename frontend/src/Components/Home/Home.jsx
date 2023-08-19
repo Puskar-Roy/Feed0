@@ -14,7 +14,7 @@ function Home() {
         {/* Left Content */}
         <div className="w-1/4 p-4  h-screen">
           <h1 className="text-2xl pt-4 pb-2 text-black">Feeds</h1>
-          <div className="overflow-y-auto h-full py-4 ">
+          <div className="overflow-y-auto h-full py-4 outline outline-gray-300">
             <SidebarLeft />
           </div>
         </div>
