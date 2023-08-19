@@ -4,7 +4,7 @@ import { FaBell, FaUser, FaComment } from "react-icons/fa";
 const notifications = [
   {
     id: 1,
-    text: "John liked your post.",
+    text: "Feed0 liked your post.",
     icon: <FaBell className="text-blue-500" />,
   },
   {
@@ -14,7 +14,7 @@ const notifications = [
   },
   {
     id: 3,
-    text: "You have a new friend request.",
+    text: "Feed0 Updated to v1.1",
     icon: <FaUser className="text-purple-500" />,
   },
   // Add more notifications here
