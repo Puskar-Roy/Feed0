@@ -56,7 +56,7 @@ const Login = () => {
               <input
                 onChange={handleEmailChange}
                 value={email}
-                className="border border-gray-400 focus:outline-blue-500 rounded-md w-full shadow-sm px-3 py-2"
+                className="border border-gray-400 focus:outline-blue-500 rounded-lg w-full shadow-sm px-3 py-2"
                 type="email"
                 name="email"
                 placeholder=" Email / Phone Number / @UserName"
@@ -66,17 +66,17 @@ const Login = () => {
               <input
                 onChange={handlePasswordChange}
                 value={password}
-                className="border border-gray-400 focus:outline-blue-500 rounded-md w-full shadow-sm px-3 py-2"
+                className="border border-gray-400 focus:outline-blue-500 rounded-lg w-full shadow-sm px-3 py-2"
                 type="password"
                 name="password"
                 placeholder="Password"
               />
             </div>
 
-            <div>
+            <div className="mx-auto">
               <input
                 onClick={registerUserSubmit}
-                className="bg-blue-300 w-full py-2 rounded-lg text-white font-bold cursor-pointer hover:bg-blue-500"
+                className="bg-blue-300 w-fit  px-10 py-2 rounded-[16px] text-white font-bold cursor-pointer hover:bg-blue-500"
                 type="submit"
                 value="Login"
               />
@@ -103,19 +103,19 @@ const Login = () => {
               </p>
             </div>
             <div className="mt-4">
-              <p className="text-center pb-3">Or continue with</p>
+              <p className="text-center pb-3">Or Continue with</p>
 
               <div className="flex gap-4">
-                <button className="bg-white flex items-center outline outline-gray-300 justify-center hover:text-white space-x-3 w-1/2 py-1 rounded-md text-black font-bold cursor-pointer hover:bg-blue-500">
+                <button className="bg-white flex items-center outline outline-gray-300 justify-center hover:text-white space-x-3 w-1/2 py-1 rounded-lg text-black font-bold cursor-pointer hover:bg-blue-500">
                   <FcGoogle /> <span>Google</span>
                 </button>
-                <button className="bg-[#24292F] flex items-center space-x-3 justify-center w-1/2 py-1 rounded-md text-white font-bold cursor-pointer hover:bg-blue-500">
+                <button className="bg-[#24292F] flex items-center space-x-3 justify-center w-1/2 py-1 rounded-lg text-white font-bold cursor-pointer hover:bg-blue-500">
                   <FaGithub /> <span> Github</span>
                 </button>
               </div>
             </div>
 
-            <p className="text-sm text-gray-500 mt-10 flex justify-between">
+            <p className="text-sm text-gray-500 mt-10 flex space-x-6 justify-center">
               <span>Don't have an account ?</span>
               <a href="/register" className="text-[#4F46E5] font-bold">
                 Register Here
