@@ -11,6 +11,4 @@ mongoose
     console.log(err);
   });
 
-
-  declare module "./connectDatabase" {
-  }
+declare module "./connectDatabase" {}

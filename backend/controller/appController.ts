@@ -1,9 +1,10 @@
 import { Request, Response } from "express";
 import User from "../models/User";
-import jwt from "jsonwebtoken";
 import bcryptjs from "bcryptjs";
 import { cloudinary } from "../utils/cloudinary";
 import Post from "../models/Posts";
+import jwt from "jsonwebtoken";
+import { IUserRequest } from "../middleware/middlewares";
 
 const loginController = async (req: Request, res: Response) => {
   const { email, password } = req.body;
@@ -18,8 +19,8 @@ const loginController = async (req: Request, res: Response) => {
       const verifyPass = await bcryptjs.compare(password, userExist.password);
       if (verifyPass) {
         const token = jwt.sign(
-          { id: userExist._id, roll: userExist.phone },
-          "process.env.JWT"
+          { id: userExist._id, phone: userExist.phone },
+          process.env.JWT as string
         );
         const expirationDate = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000);
         const options = {
@@ -157,7 +158,6 @@ const createPost = async (req: Request, res: Response) => {
   let public_imageUrl = "";
   if (req.file) {
     const result = await cloudinary.uploader.upload(req.file.path);
-    console.log(result.secure_url);
     public_imagePublicId = result.public_id;
     public_imageUrl = result.secure_url;
   }
@@ -178,10 +178,11 @@ const createPost = async (req: Request, res: Response) => {
   }
 };
 
-const getAllPost = async (req: Request, res: Response) => {
+const getAllPost = async (req: IUserRequest, res: Response) => {
+  const user = req.userData;
   try {
     const posts = await Post.find().exec();
-    res.json(posts);
+    res.json({ posts: posts, userData: user });
   } catch (error) {
     res.status(200).json(error);
   }

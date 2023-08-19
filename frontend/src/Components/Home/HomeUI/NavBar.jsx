@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   FaHome,
   FaBell,
@@ -38,7 +38,7 @@ function NavBar() {
         <div className="flex items-center space-x-4">
           <img
             className="h-10 w-10 rounded-full"
-            src="/Doraemon.png"
+            src={"/Doraemon.png"}
             alt="Profile"
           />
           <h1 className="font-mono text-lg font-semibold">Feed0</h1>
