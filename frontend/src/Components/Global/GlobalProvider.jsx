@@ -1,9 +1,10 @@
 import React from "react";
-
+import NavBar from "../Home/HomeUI/NavBar";
 function GlobalProvider({ children }) {
   return (
     <div>
-      <h1>hi</h1>
+      <NavBar />
+      <div className="my-[4rem] mx-auto"></div>
     </div>
   );
 }
