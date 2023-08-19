@@ -8,7 +8,7 @@ function UserProfile() {
         <div className="flex items-center justify-between">
           <div className="w-20 h-20 rounded-full bg-indigo-100 flex items-center justify-center">
             {/* User Profile Image */}
-            {/* Replace with your image or icon */}
+
             <FaUserPlus className="text-indigo-500 text-3xl" />
           </div>
           <button className="text-blue-500 hover:underline">
