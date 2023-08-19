@@ -15,23 +15,17 @@ const Register = () => {
     image: null,
   });
 
+  const [termsAccepted, setTermsAccepted] = useState(false);
+
   const handleInputChange = (event) => {
     const { name, value, type, checked } = event.target;
 
-    // For checkbox input
     if (type === "checkbox") {
       setFormData((prevData) => ({ ...prevData, [name]: checked }));
+      setTermsAccepted(checked);
     } else {
       setFormData((prevData) => ({ ...prevData, [name]: value }));
     }
-  };
-
-  const handleImageChange = (event) => {
-    const imageFile = event.target.files[0];
-    setFormData({
-      ...formData,
-      image: imageFile,
-    });
   };
 
   const handleSubmit = async (event) => {
