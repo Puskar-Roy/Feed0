@@ -11,7 +11,7 @@ function FeedTag({ index, tag, feeds }) {
         <h2 className="px-4 ml-2   font-bold text-white">#{tag.name}</h2>
         <p className="px-4 ml-2 mb-3   text-xs text-gray-400">{feeds} Feeds</p>
       </div>
-      <div className="flex-1 px-4 py-2 m-2">
+      <div className=" px-4 py-2 m-2">
         <a
           href=""
           className="text-2xl rounded-full text-gray-400 hover:bg-blue-800 hover:text-blue-300 float-right"
