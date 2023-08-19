@@ -39,9 +39,9 @@ function SuggestedPerson({ name, username, followers }) {
 
 function TrendingUsers() {
   const suggestedPeople = [
-    { name: "Feed0 Official", username: "Feed0", followers: 1200000 },
-    { name: "ImKKingshuk", username: "Feed0", followers: 1200000000 },
-    { name: "Puskar", username: "Feed0", followers: 120000000 },
+    { name: "Feed0 Official", username: "Feed0", followers: 120000 },
+    { name: "ImKKingshuk", username: "Feed0", followers: 12000000 },
+    { name: "Puskar", username: "Feed0", followers: 1200000 },
     { name: "UIT", username: "Feed0", followers: 100 },
     { name: "Feed0 Official", username: "Feed0", followers: 1200 },
 
