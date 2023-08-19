@@ -4,20 +4,20 @@ import axios from "axios";
 
 function CreatePost() {
   const [activeTab, setActiveTab] = useState("normal");
-  const [dataa,setData] = useState();
+  // const [dataa,setData] = useState();
   const[post , Setpost] = useState('');
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8000/api/posts`, {
-        withCredentials: true,
-      })
-      .then((response) => {
-        setData(response.data.userData);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:8000/api/posts`, {
+  //       withCredentials: true,
+  //     })
+  //     .then((response) => {
+  //       setData(response.data.userData);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
 
 
   const handleTabChange = (tab) => {
@@ -26,14 +26,14 @@ function CreatePost() {
 
   const handelPost = async ()=>{
     console.log(post);
-    const postData = axios.post(`http://localhost:8000/api/posts`,{author:dataa.name , content:post}, {
-      withCredentials: true,
-    });
-    if(postData){
-      window.alert("Post Done Reload")
-    }else{
-      window.alert("Not Done")
-    }
+    // const postData = axios.post(`http://localhost:8000/api/posts`,{author:dataa.name , content:post}, {
+    //   withCredentials: true,
+    // });
+    // if(postData){
+    //   window.alert("Post Done Reload")
+    // }else{
+    //   window.alert("Not Done")
+    // }
 
   }
 
@@ -63,13 +63,18 @@ function CreatePost() {
       </div>
       <div className="flex">
         <div className="w-12 py-1">
-          {dataa && dataa.imageUrl ? (
+          <img
+            className="h-10 w-10 rounded-full"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWvMxfKkeZ58-ytifqHPrI38BVn9jDdwf-pg&usqp=CAU"
+            alt="ddd"
+          />
+          {/* {dataa && dataa.imageUrl ? (
             <img
               className="h-10 w-10 rounded-full"
               src={dataa.imageUrl}
               alt="ddd"
             />
-          ) : null}
+          ) : null} */}
         </div>
         <div className="flex-1 px-2">
           <textarea
@@ -77,7 +82,9 @@ function CreatePost() {
               activeTab === "incognito" ? "bg-gray-300" : ""
             }`}
             rows="3"
-            onChange={(e)=>{Setpost(e.target.value)}}
+            onChange={(e) => {
+              Setpost(e.target.value);
+            }}
             value={post}
             placeholder={
               activeTab === "incognito"
@@ -124,7 +131,7 @@ function CreatePost() {
           </a>
         </div>
         <button
-        onClick={handelPost}
+          onClick={handelPost}
           className={` text-white font-bold py-2 px-5  ${
             activeTab === "incognito" ? "bg-purple-600" : "bg-blue-500"
           }  rounded-full hover:bg-blue-600 `}
