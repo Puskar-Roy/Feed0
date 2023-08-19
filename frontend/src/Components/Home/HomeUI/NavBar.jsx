@@ -74,8 +74,8 @@ function NavLinkWithDot({ to, icon, isActive }) {
   return (
     <Link
       to={to}
-      className={`text-3xl text-gray-600 hover:text-blue-300 ${
-        isActive ? "text-blue-500" : ""
+      className={`text-3xl  hover:text-blue-300 ${
+        isActive ? "text-blue-500" : "text-gray-600"
       }`}
     >
       {icon}
