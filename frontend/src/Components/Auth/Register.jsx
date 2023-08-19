@@ -206,11 +206,11 @@ const Register = () => {
             </div>
             <button
               type="submit"
-              className={`w-full text-blue font-medium rounded-[16px] text-sm px-5 py-2.5 text-center ${
+              className={`w-full font-medium rounded-[16px] text-sm px-5 py-2.5 text-center ${
                 termsAccepted
-                  ? "bg-blue-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300"
-                  : "bg-blue-300 pointer-events-none"
-              } dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800`}
+                  ? "bg-blue-500 text-white"
+                  : "bg-blue-300 text-black pointer-events-none"
+              } `}
               disabled={!termsAccepted}
             >
               Create an account
