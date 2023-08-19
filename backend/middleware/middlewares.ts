@@ -19,8 +19,6 @@ const verifyToken = async (
 
     if (verify) {
       const idUser: string = verify.id;
-      console.log(verify.id);
-
       const user = (await User.findOne({ _id: idUser })) as IUser;
 
       if (user) {
