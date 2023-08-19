@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from 'axios'
+import axios from "axios";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -10,9 +10,9 @@ const Register = () => {
     termsAccepted: false,
     college: "",
     batch: "",
-    department:"",
-    phone:"",
-    image:null
+    department: "",
+    phone: "",
+    image: null,
   });
 
   const handleInputChange = (event) => {
@@ -26,64 +26,54 @@ const Register = () => {
     }
   };
 
-
   const handleImageChange = (event) => {
-      const imageFile = event.target.files[0];
-      setFormData({
-        ...formData,
-        image: imageFile,
-      });
-    };
+    const imageFile = event.target.files[0];
+    setFormData({
+      ...formData,
+      image: imageFile,
+    });
+  };
 
-  
-const handleSubmit = async (event) => {
-  event.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-  const formDataToSend = new FormData();
-  for (const key in formData) {
-    formDataToSend.append(key, formData[key]);
-  }
+    const formDataToSend = new FormData();
+    for (const key in formData) {
+      formDataToSend.append(key, formData[key]);
+    }
 
-  try {
-    const response = await axios.post(
-      "http://localhost:8000/api/register",
-      formData,{
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/api/register",
+        formData,
+        {
           withCredentials: true,
         },
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      }
-    );
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
 
-    const data = response.data;
-    if (data.success) {
-      // Registration successful
-      alert("Registration Done!");
-    } else {
-      // Registration failed
-      alert("Registration failed: " + data.error);
+      const data = response.data;
+      if (data.success) {
+        // Registration successful
+        alert("Registration Done!");
+      } else {
+        // Registration failed
+        alert("Registration failed: " + data.error);
+      }
+    } catch (error) {
+      console.error("Error registering user:", error);
     }
-  } catch (error) {
-    console.error("Error registering user:", error);
-  }
-};
+  };
 
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto  lg:py-0">
-        <a
-          href="#"
-          className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
-        >
-          <img
-            className="w-8 h-8 mr-2"
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
-            alt="logo"
-          />
-          Flowbite
-        </a>
+        <img className="w-8 h-8 mr-2" src="/Doraemon.png" alt="logo" />
+
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
@@ -144,60 +134,7 @@ const handleSubmit = async (event) => {
                   required
                 />
               </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Your College
-                </label>
-                <input
-                  type="text"
-                  name="college"
-                  id="college"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="xyz institute..."
-                  value={formData.college}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Your Department
-                </label>
-                <input
-                  type="text"
-                  name="department"
-                  id="department"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="CSE/IT etc."
-                  value={formData.department}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Your Batch
-                </label>
-                <input
-                  type="text"
-                  name="batch"
-                  id="batch"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Like : 2022-2026"
-                  value={formData.batch}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
+
               <div>
                 <label
                   htmlFor="password"
