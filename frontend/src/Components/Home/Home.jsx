@@ -9,8 +9,7 @@ import SidebarRight from "./HomeUI/SidebarRight";
 function Home() {
   return (
     <div className="mx-auto h-screen w-screen no-scrollbar">
-      <Navbar />
-      <div className="my-[4rem] flex">
+      <div className=" flex">
         {/* Left Content */}
         <div className="w-1/4 p-4  h-screen">
           <h1 className="text-2xl pt-4 pb-2 text-black">Feeds</h1>
