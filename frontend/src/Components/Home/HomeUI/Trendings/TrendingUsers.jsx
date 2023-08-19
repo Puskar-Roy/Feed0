@@ -23,11 +23,13 @@ function SuggestedPerson({ name, username, followers }) {
           alt={name}
         />
       </div>
-      <div className="flex-col items-center flex ">
+      <div className="flex-col items-center flex  text-left">
         <p className="text-base  font-medium ">{name}</p>
         <p className="text-sm  ">@{username}</p>
 
-        <p className="text-xs  flex">{formattedFollowers} Followers</p>
+        <p className="text-xs text-center flex">
+          {formattedFollowers} Followers
+        </p>
       </div>
 
       <button className="bg-transparent hover:bg-blue-500   font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded-full">
