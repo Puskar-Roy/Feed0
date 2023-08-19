@@ -57,7 +57,7 @@ const Login = () => {
                 className="text-gray-600 font-bold inline-block pb-2"
                 htmlFor="email"
               >
-                Email
+                Email / Phone Number / @username
               </label>
               <input
                 onChange={handleEmailChange}
