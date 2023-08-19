@@ -187,19 +187,20 @@ const Register = () => {
                 </div>
                 <div className="ml-3 text-sm">
                   <p>
-                    By clicking Sign Up, you agree to our{" "}
+                    By clicking Create an Account, you agree to our{" "}
                     <a
                       className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                       href="#"
                     >
                       Terms and Conditions
                     </a>{" "}
+                    ,{" "}
                     <a
                       className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                       href="#"
                     >
                       Privacy Policy
-                    </a>
+                    </a>{" "}
                     and{" "}
                     <a
                       className="font-medium text-primary-600 hover:underline dark:text-primary-500"
