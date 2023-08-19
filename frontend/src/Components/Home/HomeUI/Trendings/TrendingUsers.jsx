@@ -15,9 +15,9 @@ function SuggestedPerson({ name, username, followers }) {
   const formattedFollowers = formatFollowersCount(followers);
 
   return (
-    <div className="flex flex-shrink-0">
+    <div className="flex flex-shrink-0 w-full">
       <div className="flex-1">
-        <div className="flex items-center w-48">
+        <div className="flex items-center ">
           <div>
             <img
               className="inline-block h-10 w-auto rounded-full ml-4 mt-2"
