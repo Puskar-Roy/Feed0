@@ -15,28 +15,24 @@ function SuggestedPerson({ name, username, followers }) {
   const formattedFollowers = formatFollowersCount(followers);
 
   return (
-    <div className="flex justify-between px-4 w-full rounded-lg outline outline-gray-400">
-      <div className="flex-1">
-        <div className="flex items-center ">
-          <div>
-            <img
-              className="inline-block h-10 w-auto rounded-full ml-4 mt-2"
-              src="/Doaremon.png"
-              alt={name}
-            />
-          </div>
-          <div className="ml-3 mt-3">
-            <p className="text-base leading-6 font-medium text-white">{name}</p>
-            <p className="text-sm  ">@{username}</p>
-            <p className="text-xs  flex">{formattedFollowers} Followers</p>
-          </div>
-        </div>
+    <div className="flex justify-between px-1 items-center w-full rounded-lg outline outline-gray-400">
+      <div>
+        <img
+          className=" w-10 h-10 m-2 rounded-full "
+          src="/Doraemon.png"
+          alt={name}
+        />
       </div>
-      <div className="flex-1 px-4 py-2 m-2">
-        <button className="bg-transparent hover:bg-blue-500   font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded-full">
-          <FaUserPlus className="h-4 w-4 " />
-        </button>
+      <div className="flex-col items-center flex ">
+        <p className="text-base  font-medium ">{name}</p>
+        <p className="text-sm  ">@{username}</p>
+
+        <p className="text-xs  flex">{formattedFollowers} Followers</p>
       </div>
+
+      <button className="bg-transparent hover:bg-blue-500   font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded-full">
+        <FaUserPlus className="h-4 w-4 " />
+      </button>
     </div>
   );
 }
