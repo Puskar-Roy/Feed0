@@ -44,7 +44,7 @@ function NavBar() {
           <h1 className="font-mono text-lg font-semibold">Feed0</h1>
         </div>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-6">
           {middleNavLinks.map((link, index) => (
             <NavLinkWithDot
               key={index}
