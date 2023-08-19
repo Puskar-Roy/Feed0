@@ -16,12 +16,12 @@ function UserProfile() {
               <div>
                 {" "}
                 <p className="font-bold text-gray-700 text-xl">10</p>{" "}
-                <p className="text-gray-400">Photos</p>{" "}
+                <p className="text-gray-400">Followers</p>{" "}
               </div>{" "}
               <div>
                 {" "}
                 <p className="font-bold text-gray-700 text-xl">89</p>{" "}
-                <p className="text-gray-400">Comments</p>{" "}
+                <p className="text-gray-400">Posts</p>{" "}
               </div>{" "}
             </div>{" "}
             <div className="relative">
