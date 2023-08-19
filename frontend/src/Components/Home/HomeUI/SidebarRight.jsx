@@ -11,7 +11,7 @@ function SidebarRight() {
         <FeedTags />
       </div>
       <div>
-        <h1 className="text-2xl pb-2 text-black">Trending Profiles</h1>
+        <h1 className="text-xl pb-2 text-black">Trending Profiles</h1>
         <TrendingUsers />
       </div>
     </div>
