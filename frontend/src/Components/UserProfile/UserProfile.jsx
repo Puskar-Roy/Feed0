@@ -68,7 +68,7 @@ function UserProfile() {
 
         <div className="mt-6">
           {/* User's Posts */}
-          {/* Render user's posts here */}
+          {/* add user's posts here */}
         </div>
       </div>
     </div>
