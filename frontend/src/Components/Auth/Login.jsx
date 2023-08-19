@@ -56,22 +56,20 @@ const Login = () => {
               <label
                 className="text-gray-600 font-bold inline-block pb-2"
                 htmlFor="email"
-              >
-                Email / Phone Number / @username
-              </label>
+              ></label>
               <input
                 onChange={handleEmailChange}
                 value={email}
                 className="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2"
                 type="email"
                 name="email"
-                placeholder="puskarroy@gmail.com"
+                placeholder=" Email / Phone Number / @UserName"
               />
             </div>
             <div>
               <label
                 className="text-gray-600 font-bold inline-block pb-2"
-                htmlFor="password"
+                htmlFor="Password"
               >
                 Password
               </label>
