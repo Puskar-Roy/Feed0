@@ -106,6 +106,9 @@ const Login = () => {
               <p className="text-center pb-3">Or Continue with</p>
 
               <div className="flex gap-4">
+                <button className="bg-white flex items-center outline outline-gray-300 justify-center hover:text-white space-x-3 w-1/2 py-1 rounded-lg text-black font-bold cursor-pointer hover:bg-blue-500">
+                  <FcGoogle /> <span>Google</span>
+                </button>
                 <button className="bg-[#24292F] flex items-center space-x-3 justify-center w-1/2 py-1 rounded-lg text-white font-bold cursor-pointer hover:bg-blue-500">
                   <FaGithub /> <span> Github</span>
                 </button>
