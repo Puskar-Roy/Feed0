@@ -6,8 +6,14 @@ function SidebarRight() {
   return (
     <div className="mx-auto space-y-10 ">
       <SearchBar />
-      <FeedTags />
-      <TrendingUsers />
+      <div>
+        <h1 className="text-2xl py-6 text-black">FeedTags</h1>
+        <FeedTags />
+      </div>
+      <div>
+        <h1 className="text-2xl py-6 text-black">FeedTags</h1>
+        <TrendingUsers />
+      </div>
     </div>
   );
 }
