@@ -108,6 +108,11 @@ const Login = () => {
                   Remember me
                 </label>
               </div>
+              <p class="text-sm">
+                <a href="/forgot" class="text-indigo-400 hover:text-blue-500">
+                  Forgot password?
+                </a>
+              </p>
             </div>
             <div className="mt-4">
               <p className="text-center pb-3">Or continue with</p>
