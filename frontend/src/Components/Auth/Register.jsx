@@ -190,16 +190,22 @@ const Register = () => {
                     htmlFor="terms"
                     className="font-light text-gray-500 dark:text-gray-300"
                   >
-                    I accept the{" "}
+                    I accept the
+                  </label>
+                  <p>
+                    By clicking Sign Up, you agree to our{" "}
                     <a
                       className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                       href="#"
                     >
                       Terms and Conditions
+                    </a>{" "}
+                    <a
+                      className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                      href="#"
+                    >
+                      Privacy Policy
                     </a>
-                  </label>
-                  <p>
-                    By clicking Sign Up, you agree to our Terms, Privacy Policy
                     and Cookies Policy.{" "}
                   </p>
                 </div>
