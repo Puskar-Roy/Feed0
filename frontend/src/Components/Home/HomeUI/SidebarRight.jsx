@@ -4,7 +4,7 @@ import TrendingUsers from "./Trendings/TrendingUsers";
 import FeedTags from "./Trendings/FeedTags";
 function SidebarRight() {
   return (
-    <div className="mx-auto  space-y-8">
+    <div className="mx-auto space-y-18 ">
       <SearchBar />
       <FeedTags />
       <TrendingUsers />

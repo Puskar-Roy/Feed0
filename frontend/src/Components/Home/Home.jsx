@@ -27,7 +27,7 @@ function Home() {
         </div>
         {/* Right Content */}
         <div className="w-1/4 p-4  h-screen">
-          <div className=" h-full">
+          <div className="overflow-y-auto h-full py-4 ">
             <SidebarRight />
           </div>
         </div>
