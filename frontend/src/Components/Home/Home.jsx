@@ -27,7 +27,7 @@ function Home() {
         </div>
         {/* Right Content */}
         <div className="w-1/4 p-4  h-screen">
-          <div className=" h-full my-6 ">
+          <div className=" h-full my-6 mb-12 ">
             <SidebarRight />
           </div>
         </div>
