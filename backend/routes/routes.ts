@@ -16,6 +16,8 @@ const {
   createPost,
   likePost,
   addComment,
+  sendFriendRequestController,
+  respondToFriendRequestController
 } = controllers;
 
 // Set Up Router
@@ -33,12 +35,22 @@ router.get("/users/:id", getUser);
 router.patch("/users/:id", updateUser);
 router.delete("/users/:id", deleteUser);
 
-//      2.Users End Point
+//      3.Posts End Point
 router.post("/posts", multerConfig.single("image"), createPost);
 router.post("/posts/:postId/:userId", likePost);
 router.get("/posts", verifyToken, getAllPost);
 router.get("/posts/:id", getPost);
 router.patch("/posts/:id", updatePost);
 router.delete("/posts/:id", deletePost);
+
+//      4.Friends End Point
+router.post("/addFriend/:senderId/:receiverId",sendFriendRequestController);
+router.post(
+  "/respondFriend/:userId/:requesterId",
+  respondToFriendRequestController
+);
+
+
+
 
 export default router;

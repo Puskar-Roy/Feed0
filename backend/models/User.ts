@@ -1,6 +1,28 @@
 import mongoose, { Document, Model, Schema } from "mongoose";
 import bcryptjs from "bcryptjs";
 
+
+interface ILike extends Document {
+  user: string;
+  timestamp: Date;
+}
+
+interface IComment extends Document {
+  user: string;
+  text: string;
+  timestamp: Date;
+}
+
+interface MyPosts extends Document {
+  author: string;
+  content: string;
+  likes: ILike[];
+  comments: IComment[];
+  public_imagePublicId: String;
+  public_imageUrl: String;
+  timestamp: Date;
+}
+
 export interface IUser extends Document {
   name: string;
   department: string;
@@ -12,6 +34,9 @@ export interface IUser extends Document {
   phone: number;
   imagePublicId: String;
   imageUrl: String;
+  posts: [];
+  friends: string[];
+  pendingRequests: string[];
 }
 
 const userSchema: Schema<IUser> = new mongoose.Schema({
@@ -51,6 +76,9 @@ const userSchema: Schema<IUser> = new mongoose.Schema({
   },
   imagePublicId: { type: String },
   imageUrl: { type: String },
+  posts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }],
+  friends: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+  pendingRequests: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
 });
 
 userSchema.pre<IUser>("save", async function (next) {
