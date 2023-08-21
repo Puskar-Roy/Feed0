@@ -262,6 +262,82 @@ const addComment = async (req: Request, res: Response) => {
   }
 };
 
+
+
+
+
+const sendFriendRequestController = async (req: Request, res: Response) => {
+  const senderId = req.params.senderId;
+  const receiverId = req.params.receiverId;
+
+  try {
+    const sender = await User.findById(senderId);
+    const receiver = await User.findById(receiverId);
+
+    if (!sender || !receiver) {
+      return res.status(404).json({ message: "User not found." });
+    }
+
+    if (receiver.pendingRequests.includes(senderId)) {
+      return res.status(400).json({ message: "Friend request already sent." });
+    }
+    receiver.pendingRequests.push(senderId);
+    await receiver.save();
+
+    res.json({ message: "Friend request sent successfully." });
+  } catch (error) {
+    console.error("Error sending friend request:", error);
+    res.status(500).json({ message: "Internal server error." });
+  }
+};
+
+
+const respondToFriendRequestController = async (
+  req: Request,
+  res: Response
+) => {
+  const userId = req.params.userId;
+  const requesterId = req.params.requesterId;
+  const response = req.body.response; // 'accept' or 'reject'
+
+  try {
+    const user = await User.findById(userId);
+    const requester = await User.findById(requesterId);
+
+    if (!user || !requester) {
+      return res.status(404).json({ message: "User not found." });
+    }
+
+    if (!user.pendingRequests.includes(requesterId)) {
+      return res.status(400).json({ message: "Friend request not found." });
+    }
+
+    user.pendingRequests = user.pendingRequests.filter(
+      (id) => id.toString() !== requesterId
+    );
+
+    if (response === "accept") {
+      user.friends.push(requesterId);
+      requester.friends.push(userId);
+    }
+
+    await user.save();
+    await requester.save();
+
+    res.json({ message: `Friend request ${response}ed.` });
+  } catch (error) {
+    console.error("Error responding to friend request:", error);
+    res.status(500).json({ message: "Internal server error." });
+  }
+};
+
+
+
+
+
+
+
+
 export default {
   loginController,
   registerController,
@@ -276,4 +352,6 @@ export default {
   createPost,
   likePost,
   addComment,
+  sendFriendRequestController,
+  respondToFriendRequestController
 };

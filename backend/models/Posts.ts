@@ -12,12 +12,13 @@ interface IComment extends Document {
 }
 
 interface IPost extends Document {
+  userId: string;
   author: string;
   content: string;
   likes: ILike[];
   comments: IComment[];
-  public_imagePublicId: String;
-  public_imageUrl: String;
+  public_imagePublicId: string;
+  public_imageUrl: string;
 }
 
 const likeSchema: Schema<ILike> = new mongoose.Schema({
@@ -48,6 +49,10 @@ const commentSchema: Schema<IComment> = new mongoose.Schema({
 
 const postSchema: Schema<IPost> = new mongoose.Schema(
   {
+    userId: {
+      type: String,
+      required: true,
+    },
     author: {
       type: String,
       required: true,
@@ -65,6 +70,10 @@ const postSchema: Schema<IPost> = new mongoose.Schema(
     timestamps: true,
   }
 );
+
+
+
+
 
 const Post: Model<IPost> = mongoose.model<IPost>("Post", postSchema);
 
