@@ -34,7 +34,7 @@ export interface IUser extends Document {
   phone: number;
   imagePublicId: String;
   imageUrl: String;
-  posts: [];
+  posts: string[];
   friends: string[];
   pendingRequests: string[];
 }
