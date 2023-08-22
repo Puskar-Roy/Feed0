@@ -153,7 +153,12 @@ const deleteUser = async (req: Request, res: Response) => {
 };
 
 const createPost = async (req: Request, res: Response) => {
-  const { author, content } = req.body;
+  const userId = req.params.userId;
+  const user = await User.findById(userId);
+  if (!user) {
+    return res.status(404).json({ message: "User not found." });
+  }
+  const { content } = req.body;
   let public_imagePublicId = "";
   let public_imageUrl = "";
   if (req.file) {
@@ -163,7 +168,8 @@ const createPost = async (req: Request, res: Response) => {
   }
   try {
     const newPost = new Post({
-      author,
+      author: user.name,
+      userId: user._id.toString(),
       content,
       likes: [],
       comments: [],
@@ -171,6 +177,8 @@ const createPost = async (req: Request, res: Response) => {
       public_imageUrl,
     });
     const savedPost = await newPost.save();
+    user.posts.push(newPost._id);
+    await user.save();
     res.status(201).json(savedPost);
   } catch (error) {
     console.error("Error creating post:", error);
@@ -179,10 +187,9 @@ const createPost = async (req: Request, res: Response) => {
 };
 
 const getAllPost = async (req: IUserRequest, res: Response) => {
-  const user = req.userData;
   try {
-    const posts = await Post.find().exec();
-    res.json({ posts: posts, userData: user });
+    const posts = await Post.find().sort("-createdAt").exec();
+    res.json(posts);
   } catch (error) {
     res.status(200).json(error);
   }
@@ -262,10 +269,6 @@ const addComment = async (req: Request, res: Response) => {
   }
 };
 
-
-
-
-
 const sendFriendRequestController = async (req: Request, res: Response) => {
   const senderId = req.params.senderId;
   const receiverId = req.params.receiverId;
@@ -332,11 +335,27 @@ const respondToFriendRequestController = async (
 };
 
 
+const getNewsFeed = async (req: Request, res: Response) => {
+  const userId = req.params.userId;
 
+  try {
+    const user = await User.findById(userId);
 
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
+    }
+    const friendIds = user.friends.map((friend) => friend.toString());
+    const newsFeedPosts = await Post.find({ userId: { $in: friendIds } })
+      .populate("author", "name imageUrl") // Populate author information
+      .sort("-createdAt") // Sort by most recent
+      .limit(10); 
+    res.json(newsFeedPosts);
 
-
-
+  } catch (error) {
+    console.error("Error retrieving news feed:", error);
+    res.status(500).json({ message: "Internal server error." });
+  }
+};
 
 export default {
   loginController,
@@ -353,5 +372,6 @@ export default {
   likePost,
   addComment,
   sendFriendRequestController,
-  respondToFriendRequestController
+  respondToFriendRequestController,
+  getNewsFeed
 };

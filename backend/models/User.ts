@@ -18,8 +18,8 @@ interface MyPosts extends Document {
   content: string;
   likes: ILike[];
   comments: IComment[];
-  public_imagePublicId: String;
-  public_imageUrl: String;
+  public_imagePublicId: string;
+  public_imageUrl: string;
   timestamp: Date;
 }
 
@@ -34,7 +34,7 @@ export interface IUser extends Document {
   phone: number;
   imagePublicId: String;
   imageUrl: String;
-  posts: [];
+  posts: string[];
   friends: string[];
   pendingRequests: string[];
 }

@@ -72,9 +72,6 @@ const postSchema: Schema<IPost> = new mongoose.Schema(
 );
 
 
-
-
-
 const Post: Model<IPost> = mongoose.model<IPost>("Post", postSchema);
 
 export default Post;
