@@ -3,11 +3,10 @@ import {
   FaHome,
   FaBell,
   FaEnvelope,
-  FaCompass,
   FaUser,
-  FaEllipsisH,
   FaSignOutAlt,
 } from "react-icons/fa";
+import { FaUsersViewfinder } from "react-icons/fa6";
 import { GrSettingsOption } from "react-icons/gr";
 import { Link, useLocation } from "react-router-dom";
 
@@ -21,7 +20,7 @@ function NavBar() {
 
   const middleNavLinks = [
     { to: "/", icon: <FaHome /> },
-    { to: "/explore", icon: <FaCompass /> },
+    { to: "/explore", icon: <FaUsersViewfinder /> },
     { to: "/notifications", icon: <FaBell /> },
     { to: "/messages", icon: <FaEnvelope /> },
   ];
