@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
 import User from "../models/User";
+import Post from "../models/Posts";
+import Group from "../models/Groups";
 import bcryptjs from "bcryptjs";
 import { cloudinary } from "../utils/cloudinary";
-import Post from "../models/Posts";
 import jwt from "jsonwebtoken";
 import { IUserRequest } from "../middleware/middlewares";
 
@@ -356,6 +357,104 @@ const getNewsFeed = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Internal server error." });
   }
 };
+
+
+
+const createGroup = async (req: Request, res: Response) => {
+  const { name, description } = req.body;
+  const userId = req.params.userId; // Assuming user ID is in URL parameter
+
+  try {
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
+    }
+
+    const newGroup = new Group({
+      name,
+      description,
+      creator: userId,
+      members: [userId], // Add creator as the first member
+      joinRequests: [], // Initialize join requests array
+      posts: [],
+    });
+
+    const savedGroup = await newGroup.save();
+    user.groups.push(savedGroup._id); // Add group to user's groups
+    await user.save();
+
+    res.status(201).json(savedGroup);
+  } catch (error) {
+    console.error("Error creating group:", error);
+    res.status(500).json({ message: "Internal server error." });
+  }
+};
+
+
+const sendJoinRequest = async (req: Request, res: Response) => {
+  const groupId = req.params.groupId;
+  const userId = req.body.userId; // Assuming the user ID is sent in the request body
+
+  try {
+    const group = await Group.findById(groupId);
+
+    if (!group) {
+      return res.status(404).json({ message: "Group not found." });
+    }
+
+    if (group.members.includes(userId) || group.joinRequests.includes(userId)) {
+      return res
+        .status(400)
+        .json({ message: "User is already a member or has sent a request." });
+    }
+
+    group.joinRequests.push(userId);
+    await group.save();
+
+    res.json({ message: "Join request sent successfully." });
+  } catch (error) {
+    console.error("Error sending join request:", error);
+    res.status(500).json({ message: "Internal server error." });
+  }
+};
+
+
+const respondToJoinRequest = async (req: Request, res: Response) => {
+  const groupId = req.params.groupId;
+  const userId = req.body.userId; // Assuming the user ID is sent in the request body
+  const response = req.body.response; // 'accept' or 'reject'
+
+  try {
+    const group = await Group.findById(groupId);
+
+    if (!group) {
+      return res.status(404).json({ message: "Group not found." });
+    }
+
+    if (group.members.includes(userId)) {
+      return res.status(400).json({ message: "User is already a member of the group." });
+    }
+
+    if (!group.joinRequests.includes(userId)) {
+      return res.status(400).json({ message: "User has not sent a join request for this group." });
+    }
+
+    group.joinRequests = group.joinRequests.filter(id => id.toString() !== userId);
+
+    if (response === "accept") {
+      group.members.push(userId);
+    }
+
+    await group.save();
+
+    res.json({ message: `Join request ${response}ed.` });
+  } catch (error) {
+    console.error("Error responding to join request:", error);
+    res.status(500).json({ message: "Internal server error." });
+  }
+};
+
+
 
 export default {
   loginController,
