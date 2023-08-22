@@ -22,7 +22,9 @@ const {
   createGroup,
   sendJoinRequest,
   respondToJoinRequest,
-  allGroups
+  allGroups,
+  createGroupPost,
+  getGroupPosts
 } = controllers;
 
 // Set Up Router
@@ -65,7 +67,9 @@ router.get("/feed/:userId",getNewsFeed);
 router.post("/createGroup/:userId",createGroup);
 router.post("/joinGroup/:groupId",sendJoinRequest);
 router.post("/respondJoinGroup/:groupId",respondToJoinRequest);
-router.get('/allgroups',allGroups)
+router.get('/allgroups',allGroups) 
+router.post("/:groupId/Posts", verifyToken, createGroupPost); 
+router.get("/groups/:groupId/posts", getGroupPosts); 
 
 
 

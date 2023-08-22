@@ -1,11 +1,12 @@
 import { Request, Response } from "express";
-import User from "../models/User";
+import User , {IUser} from "../models/User";
 import Post from "../models/Posts";
 import Group from "../models/Groups";
 import bcryptjs from "bcryptjs";
 import { cloudinary } from "../utils/cloudinary";
 import jwt from "jsonwebtoken";
 import { IUserRequest } from "../middleware/middlewares";
+
 
 const loginController = async (req: Request, res: Response) => {
   const { email, password } = req.body;
@@ -28,12 +29,16 @@ const loginController = async (req: Request, res: Response) => {
           expires: expirationDate,
           httpOnly: true,
         };
+      
+        
         return res.cookie("access_token", token, options).status(201).json({
           msg: "Log In Done !",
           userName: userExist.name,
           token: token,
           cookie: "stored",
           success: true,
+    
+          
         });
       } else {
         return res
@@ -456,6 +461,58 @@ const respondToJoinRequest = async (req: Request, res: Response) => {
   }
 };
 
+const createGroupPost = async (req: IUserRequest, res: Response) => {
+  const groupId = req.params.groupId;
+  const userId = req.userData?._id;
+  console.log(userId);
+  const userName = req.userData?.name;
+  console.log(userName);
+  const postContent = req.body.content;
+  try {
+    const group = await Group.findById(groupId);
+    if (!group) {
+      return res.status(404).json({ message: "Group not found." });
+    }
+    if (!group.members.includes(userId)) {
+      return res.status(403).json({ message: "You are not a member of this group." });
+    }
+    const newPost = new Post({
+      userId, // Store the user ID who created the post
+      author: userName, // Store the name who created the post
+      content: postContent,
+    });
+
+    await newPost.save();
+    group.posts.push(newPost._id);
+    await group.save();
+
+    res.json({ message: "Post created successfully." });
+  } catch (error) {
+    console.error("Error creating group post:", error);
+    res.status(500).json({ message: "Internal server error." });
+  }
+};
+
+const getGroupPosts = async (req: IUserRequest, res: Response) => {
+  const groupId = req.params.groupId;
+  try {
+    const group = await Group.findById(groupId);
+
+    if (!group) {
+      return res.status(404).json({ message: "Group not found." });
+    }
+    //Prottek phote te group id dia globally post korte pari or only group a post korte pari 
+    // Find all posts whose groupId matches the requested groupId
+    // const posts = await Post.find({ groupId });
+    res.json(group.posts);
+  } catch (error) {
+    console.error("Error retrieving group posts:", error);
+    res.status(500).json({ message: "Internal server error." });
+  }
+};
+
+
+
 
 
 
@@ -479,5 +536,7 @@ export default {
   createGroup,
   respondToJoinRequest,
   sendJoinRequest,
-  allGroups
+  allGroups,
+  createGroupPost,
+  getGroupPosts
 };
