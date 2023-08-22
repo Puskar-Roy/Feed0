@@ -188,7 +188,7 @@ const createPost = async (req: Request, res: Response) => {
 
 const getAllPost = async (req: IUserRequest, res: Response) => {
   try {
-    const posts = await Post.find().exec();
+    const posts = await Post.find().sort("-createdAt").exec();
     res.json(posts);
   } catch (error) {
     res.status(200).json(error);
@@ -344,15 +344,18 @@ const getNewsFeed = async (req: Request, res: Response) => {
     if (!user) {
       return res.status(404).json({ message: "User not found." });
     }
-    res.json(user.friends);
+    const friendIds = user.friends.map((friend) => friend.toString());
+    const newsFeedPosts = await Post.find({ userId: { $in: friendIds } })
+      .populate("author", "name imageUrl") // Populate author information
+      .sort("-createdAt") // Sort by most recent
+      .limit(10); 
+    res.json(newsFeedPosts);
 
   } catch (error) {
     console.error("Error retrieving news feed:", error);
     res.status(500).json({ message: "Internal server error." });
   }
 };
-
-
 
 export default {
   loginController,
