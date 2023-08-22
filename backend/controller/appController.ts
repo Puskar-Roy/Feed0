@@ -356,6 +356,15 @@ const getNewsFeed = async (req: Request, res: Response) => {
   }
 };
 
+const allGroups = async (req: Request, res: Response)=>{
+  try {
+    const groups = await Group.find().sort("-createdAt").exec();
+    res.json(groups);
+  } catch (error) {
+    res.status(200).json(error);
+  }
+}
+
 const createGroup = async (req: Request, res: Response) => {
   const { name, description } = req.body;
   const userId = req.params.userId; // Assuming user ID is in URL parameter
@@ -416,8 +425,7 @@ const sendJoinRequest = async (req: Request, res: Response) => {
 const respondToJoinRequest = async (req: Request, res: Response) => {
   const groupId = req.params.groupId;
   const userId = req.body.userId; // Assuming the user ID is sent in the request body
-  const response = req.body.response; // 'accept' or 'reject'
-
+  const response = req.body.response;  // 'accept' or 'reject'
   try {
     const group = await Group.findById(groupId);
 
@@ -426,6 +434,7 @@ const respondToJoinRequest = async (req: Request, res: Response) => {
     }
 
     if (group.members.includes(userId)) {
+      console.log(group.joinRequests);
       return res.status(400).json({ message: "User is already a member of the group." });
     }
 
@@ -433,20 +442,20 @@ const respondToJoinRequest = async (req: Request, res: Response) => {
       return res.status(400).json({ message: "User has not sent a join request for this group." });
     }
 
-    group.joinRequests = group.joinRequests.filter(id => id.toString() !== userId);
+    group.joinRequests = group.joinRequests.filter(id => id !== userId);
 
     if (response === "accept") {
       group.members.push(userId);
+      group.joinRequests = group.joinRequests.filter((id) => id !== userId);
     }
-
     await group.save();
-
     res.json({ message: `Join request ${response}ed.` });
   } catch (error) {
     console.error("Error responding to join request:", error);
     res.status(500).json({ message: "Internal server error." });
   }
 };
+
 
 
 
@@ -469,5 +478,6 @@ export default {
   getNewsFeed,
   createGroup,
   respondToJoinRequest,
-  sendJoinRequest
+  sendJoinRequest,
+  allGroups
 };

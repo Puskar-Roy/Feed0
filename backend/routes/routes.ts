@@ -21,7 +21,8 @@ const {
   getNewsFeed,
   createGroup,
   sendJoinRequest,
-  respondToJoinRequest
+  respondToJoinRequest,
+  allGroups
 } = controllers;
 
 // Set Up Router
@@ -62,8 +63,9 @@ router.get("/feed/:userId",getNewsFeed);
 
 //      6.Feeds End Point
 router.post("/createGroup/:userId",createGroup);
-router.post("/joinGroup/:userId/:groupId",sendJoinRequest);
-router.post("/respondJoinGroup/:userId/:groupId",respondToJoinRequest);
+router.post("/joinGroup/:groupId",sendJoinRequest);
+router.post("/respondJoinGroup/:groupId",respondToJoinRequest);
+router.get('/allgroups',allGroups)
 
 
 
