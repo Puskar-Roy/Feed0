@@ -18,13 +18,17 @@ const {
   addComment,
   sendFriendRequestController,
   respondToFriendRequestController,
-  getNewsFeed
+  getNewsFeed,
+  createGroup,
+  sendJoinRequest,
+  respondToJoinRequest
 } = controllers;
 
 // Set Up Router
 const router = express.Router();
 
 // Set Up End Points
+
 
 //      1.Auth End Point
 router.post("/", loginController);
@@ -51,8 +55,16 @@ router.post(
   respondToFriendRequestController
 );
 
-
+//      5.Feeds End Point
 router.get("/feed/:userId",getNewsFeed);
+
+
+
+//      6.Feeds End Point
+router.post("/createGroup/:userId",createGroup);
+router.post("/joinGroup/:userId/:groupId",sendJoinRequest);
+router.post("/respondJoinGroup/:userId/:groupId",respondToJoinRequest);
+
 
 
 export default router;

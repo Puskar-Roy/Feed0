@@ -295,7 +295,6 @@ const sendFriendRequestController = async (req: Request, res: Response) => {
   }
 };
 
-
 const respondToFriendRequestController = async (
   req: Request,
   res: Response
@@ -335,7 +334,6 @@ const respondToFriendRequestController = async (
   }
 };
 
-
 const getNewsFeed = async (req: Request, res: Response) => {
   const userId = req.params.userId;
 
@@ -357,8 +355,6 @@ const getNewsFeed = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Internal server error." });
   }
 };
-
-
 
 const createGroup = async (req: Request, res: Response) => {
   const { name, description } = req.body;
@@ -390,7 +386,6 @@ const createGroup = async (req: Request, res: Response) => {
   }
 };
 
-
 const sendJoinRequest = async (req: Request, res: Response) => {
   const groupId = req.params.groupId;
   const userId = req.body.userId; // Assuming the user ID is sent in the request body
@@ -417,7 +412,6 @@ const sendJoinRequest = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Internal server error." });
   }
 };
-
 
 const respondToJoinRequest = async (req: Request, res: Response) => {
   const groupId = req.params.groupId;
@@ -472,5 +466,8 @@ export default {
   addComment,
   sendFriendRequestController,
   respondToFriendRequestController,
-  getNewsFeed
+  getNewsFeed,
+  createGroup,
+  respondToJoinRequest,
+  sendJoinRequest
 };
